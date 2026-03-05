@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Quartz 4",
+    pageTitle: "School",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -24,26 +24,26 @@ const config: QuartzConfig = {
       cdnCaching: true,
       typography: {
         header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
-        code: "IBM Plex Mono",
+        body: "JetBrains Mono",
+        code: "JetBrains Mono",
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "#161618",
+          lightgray: "#3b4252 ", 
+          gray: "#3b4252",
+          darkgray: "#d8dee9",
+          dark: "#eceff4",
+          secondary: "#81a1c1",
+          tertiary: "#e5e9f0",
+          highlight: "#88c0d0",
+          textHighlight: "#88c0d0",
         },
         darkMode: {
           light: "#161618",
           lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
+          gray: "#3d3d3dff",
+          darkgray: "#393939ff",
           dark: "#ebebec",
           secondary: "#7b97aa",
           tertiary: "#84a59d",
