@@ -1,5 +1,5 @@
 
-#cs #cs210 
+#cs #cs210 #syntax 
 
 **Basics 1:**
 	Naively assessing code by its structure
