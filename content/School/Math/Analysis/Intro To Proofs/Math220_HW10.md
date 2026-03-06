@@ -1,6 +1,4 @@
 #math #math220 #proof
-# Mathematics 220  
-  
 
 ---  
   

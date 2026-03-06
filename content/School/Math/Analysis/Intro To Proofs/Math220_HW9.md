@@ -1,7 +1,6 @@
 #math #math220 #proof
 
-# Mathematics 220    
-## Homework 9    
+
 
 ---  
   

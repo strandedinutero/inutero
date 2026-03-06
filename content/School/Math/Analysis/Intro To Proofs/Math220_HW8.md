@@ -1,4 +1,4 @@
-#Math #Math220 #Proof
+#math #math220 #proof
 ## Solutions to Homework 8
 
 ### 1.
