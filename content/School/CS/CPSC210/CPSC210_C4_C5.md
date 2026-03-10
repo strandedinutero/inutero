@@ -91,7 +91,7 @@ Determining the multiplicity of a relationship:
 
 Dependencies:
 
-- If a class has a dependency on another class that is not held in a field, for example in a local variable or calls on a method, or takes a variable of that type as a parameter, then use a dashed arrow to represent the dependency.
+- If a class has a dependency on another class that is not held in a field, for example in a local variable or calls on a method, or takes a variable of that type as a parameter, then use a dashed arrow to represent the dependency. (dependencies do not have multiplicities)
 
 
 This is a summary of one approach you can take to extract a UML class diagram from code:

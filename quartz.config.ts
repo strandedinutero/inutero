@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "School",
+    pageTitle: "",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -29,15 +29,15 @@ const config: QuartzConfig = {
       },
       colors: {
        lightMode: {
-        light: "#F6F7FB",
-        lightgray: "#E8ECF5",
-        gray: "#C7CFDD",
-        darkgray: "#4A5878",
-        dark: "#2F3A55",
-        secondary: "#5A78D6",
-        tertiary: "#DDD6C2",
-        highlight: "rgba(90, 120, 214, 0.12)",
-        textHighlight: "#DDD6C2",
+        light: "#011826", // background
+        lightgray: "#6c96b1", // text highlighting 
+        gray: "#dfe2e4",
+        darkgray: "#dfe2e4", // text
+        dark: "#dfe2e4", // heading
+        secondary: "#357598",
+        tertiary: "#6c96b1",
+        highlight: "#42a8c6",
+        textHighlight: "#42a8c6",
         }, 
         darkMode: {
           light: "#0B0E14",
@@ -46,7 +46,7 @@ const config: QuartzConfig = {
           darkgray: "#B9C3DE",
           dark: "#B9C3DE",
           secondary: "#8AA6F9",
-          tertiary: "#E8E4D8",
+          tertiary: "#acaeffff",
           highlight: "rgba(143, 159, 169, 0.15)",
           textHighlight: "#E8E4D8",
         },

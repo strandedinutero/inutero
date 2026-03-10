@@ -1,5 +1,5 @@
 ---
-title: Blah blah blah
+title: The Archives
 ---
 
-Blah blah blah
+A place for everything

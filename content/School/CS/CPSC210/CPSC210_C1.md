@@ -1,6 +1,10 @@
 
 #cs #cs210
 
+## a method is considered robust when every potential input is handled
+
+- For example when a requires clause does not specify a range in the input domain that method would not be considered very rebust
+
 Throwing and catching exceptions: ie redundancy
  - A **call-stack** is formed when one method calls another.  If a() called b(), we would see b() stacked on top of a().  We can then say that the return path out of b() would be back down into its calling method, a().
 - When an exception is thrown -> the method immediately exits and nothing more in the method runs
@@ -43,7 +47,7 @@ public void someMethod() {
 - If you choose to **make the exception checked**, you are **requiring all methods that throw the exception to handle it or declare it in their method signature** and so on all the way up through the callers of the method and their callers, etc., until either some method handles the exception or the program terminates. However, choosing to make the exception type unchecked means that callers may not be aware the exception can occur.
 - Checked exceptions should be used for recoverable conditions (ie if you can fix the problem)
 - Unchecked exceptions should be used for for problems that cannot be fixed
-- Note exceptions can be thrown from anywhere, including from within a catch blow:
+- Note exceptions can be thrown from anywhere, including from within a catch block:
 ```
 try {  
     amethod();  

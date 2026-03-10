@@ -1,1 +1,23 @@
 @use "./base.scss";
+
+/* Hide all scrollbars but keep scrolling functional */
+
+/* Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Internet Explorer / Edge (legacy) */
+* {
+  -ms-overflow-style: none;
+}
+
+/* Chrome, Safari, Chromium browsers */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Optional: prevent accidental horizontal scrollbars */
+html, body {
+  overflow-x: hidden;
+}

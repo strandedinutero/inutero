@@ -1,7 +1,7 @@
 
 #cs #abstraction #cs210 
 
-Abstract classes: 
+## Abstract Classes
 - Abstract classes are the midpoint between a regular class and an interface, in that if a class extends an **abstract class** then it inherits the regular methods all the same, but must implement all of the abstract methods similar to an interface
 - Abstract class := Abstract methods must be implemented, regular methods inherited.
 - Abstract method declaration:
