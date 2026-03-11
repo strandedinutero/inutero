@@ -29,11 +29,11 @@ $mobileGrid: (
   rowGap: "5px",
   columnGap: "5px",
   templateAreas:
-    '"grid-header"
-     "grid-sidebar-left"
-     "grid-center"
-     "grid-sidebar-right"
-     "grid-footer"',
+    '"grid-sidebar-left"\
+      "grid-header"\
+      "grid-center"\
+      "grid-sidebar-right"\
+      "grid-footer"',
 );
 $tabletGrid: (
   templateRows: "auto auto auto auto",
