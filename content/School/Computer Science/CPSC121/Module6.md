@@ -23,7 +23,7 @@ Regular expressions describe which strings a language accepts and have three *fo
 1. Repetition: indicated that the immediately preceding element can appear $0 \to \infty$ times
 - eg. ab* accepts "a" "ab" "abbb"
 3. Alternation: indicates a choice, which allows the pattern to match one of several options
-- eg. (a|b|ab) accepts "a" "ab" "b" but not "aba" "ba" "abb" etc...
+- eg. (a|b|ab) accepts "a" "ab" "b" but not "aba" "ba" "abb" etc... (cant have multiple options in one accepted string)
 
 ### brackets are used for grouping!
 
