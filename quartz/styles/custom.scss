@@ -22,9 +22,3 @@ html, body {
   overflow-x: hidden;
 }
 
-@media (max-width: 800px) {
-  .left {
-    display: flex !important;
-    flex-direction: column;
-  }
-}
