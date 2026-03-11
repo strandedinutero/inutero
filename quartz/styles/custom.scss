@@ -30,3 +30,32 @@ html, body {
     linear-gradient(90deg, #333 1px, transparent 1px);
   background-size: 20px 20px; /* Grid cell size */
 
+body {
+  background-color: #011826;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+
+  $grid-size: 20px;
+  $grid-color: rgba(200, 200, 200, 0.05);
+
+  background-image:
+    linear-gradient($grid-color 1px, transparent 1px),
+    linear-gradient(90deg, $grid-color 1px, transparent 1px);
+  background-size: $grid-size $grid-size;
+
+  /* Rotate and skew for subtle 3D tilt */
+  transform: rotate(-15deg) skewX(10deg) skewY(5deg);
+  transform-origin: center;
+
+  /* Ensure rotated/skewed background covers the viewport */
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+}
