@@ -4,7 +4,7 @@
 
 Suppose we have some LP problem in it's **primal** (main) form
 $$
-max \qquad c^Tx
+\max \qquad c^Tx
 $$
 such that
 $$
@@ -19,7 +19,7 @@ And $x,\lambda$ are the decision variables
 
 There then always will exist a **dual** version of this LP, and is as follows:
 $$
-min \quad b^T \lambda 
+\min \quad b^T \lambda 
 $$
 such that
 $$
@@ -29,11 +29,11 @@ These LP's can be then be expressed as follows:
 
 Primal:
 $$
-max_{x\geq0}min_{\lambda\geq0}c^Tx+\lambda^T(b-Ax)
+\max_{x\geq0}\min_{\lambda\geq0}c^Tx+\lambda^T(b-Ax)
 $$
 Dual:
 $$
-min_{\lambda\geq0}max_{x\geq0}c^Tx+\lambda^T(b-Ax)
+\min_{\lambda\geq0}\max_{x\geq0}c^Tx+\lambda^T(b-Ax)
 $$
 Rmk:
 If max-min = min-max $\implies$ there is **strong duality and both LP's have the same optimal solution**
@@ -44,16 +44,16 @@ So when does this equality hold?
 
 Its clear that:
 $$
-c^Tx+\lambda^T(b-Ax)\leq max_{x\geq0}c^Tx+\lambda^T(b-Ax) \quad \forall x \geq 0
+c^Tx+\lambda^T(b-Ax)\leq \max_{x\geq0}c^Tx+\lambda^T(b-Ax) \quad \forall x \geq 0
 $$
 Therefore it holds that:
 $$
-min_{\lambda\geq0}[c^Tx+\lambda^T(b-Ax)]\leq min_{\lambda\geq0}[max_{x\geq0}c^Tx+\lambda^T(b-Ax)] \quad \forall x \geq 0
+\min_{\lambda\geq0}[c^Tx+\lambda^T(b-Ax)]\leq \min_{\lambda\geq0}[\max_{x\geq0}c^Tx+\lambda^T(b-Ax)] \quad \forall x \geq 0
 $$
 
 Once more maximizing $x\geq0$ on both the LHS and RHS we see:
 $$
-max_{x\geq0}min_{\lambda\geq0}[c^Tx+\lambda^T(b-Ax)]\leq min_{\lambda\geq0}[max_{x\geq0}c^Tx+\lambda^T(b-Ax)] \quad \forall x \geq 0
+\max_{x\geq0}\min_{\lambda\geq0}[c^Tx+\lambda^T(b-Ax)]\leq \min_{\lambda\geq0}[\max_{x\geq0}c^Tx+\lambda^T(b-Ax)] \quad \forall x \geq 0
 $$
 As the RHS becomes constant and only depends on $\lambda$ so the additional max is redundant.
 
@@ -221,3 +221,50 @@ $$
 ---
 # proof of strong duality
 
+Let $x=(x_1,\cdots,x_n)$ be the decision variable, let $x_{slack}=b-Ax\geq 0$, and let $x^*=(x_1^*, \cdots, x_n^*)$ be the optimal solution. Now, let the final optimal dictionary of this LP have the form:
+$$
+z=z^* +c_1^*x_1^*+\cdots+c_n^*x_n^*+\cdots+c_{n+m}^*x_{n+m}^*
+$$
+Which can then be expressed as:
+$$
+z=z^*+c^*x+c^*_{slack}x_{slack}.
+$$
+As $c_{n+m}^*x_{n+m}^*$ are simply the slack variables and their coefficients.
+
+We can then further write $z^*=cx^*=c^Tx^*=\text{optimal solution}$.
+
+Then, because this dictionary is optimal is implies that:
+$$
+c^*\leq 0 \quad \text{and} \quad c^*_{slack} \leq 0.
+$$
+This recovers:
+
+$$
+c^Tx=z=cx^*+c^*x+c^*_{slack}x_{slack}
+$$
+So, using $x_{slack}=b-Ax\geq 0$ we then get:
+$$
+\begin{align}
+c^Tx=& z=cx^*+c^*x+c^*_{slack}(b-Ax) \\
+& z = cx^*+c^*x+c^*_{slack}\cdot b - c^*_{slack}\cdot (Ax) \\
+\end{align}
+$$
+$$
+\therefore
+$$
+$$
+\begin{align}
+c^*_{slack}-c^*\cdot x&=cx^*+c^*_{slack}\cdot b \\
+(c-c^*+A^Tc^*_{slack})\cdot x& = cx^*+c^*_{slack}\cdot b \quad \forall x\in\mathbb R^n \quad \text{that are feasible}
+\end{align}
+$$
+That is, if $Ax=b, \quad \forall x$ then $a=b=0$.
+
+Now, define $\lambda^*=-c^*_{slack}$ such that $\lambda^*_i=-c^*_{n+i}$. Since we have that the slack coefficients must be at most zero as stated: $c^*_{slack} \leq 0$ it follows that $\lambda^*\geq0$ therefore $\lambda^*$ must also then be feasible.
+
+We also then have that:
+$$
+cx^*=-c^*_{slack}\cdot b= b^T\lambda^*
+$$
+
+So, **from the theorem of weak duality** we observe that these two values are equivalent, **thus both the primal and the dual have the same optimal value**. Then, because *the primal was arbitrary*, as a consequence we have then proven the theorem of strong duality as we have shown for any optimal primal solution $\exists$ an optimal dual solution that yields the same optimal objective value.
