@@ -1,0 +1,223 @@
+#math #math340 #lp
+
+# duality intro:
+
+Suppose we have some LP problem in it's **primal** (main) form
+$$
+max \qquad c^Tx
+$$
+such that
+$$
+Ax \leq b, \quad x \geq 0
+$$
+Where
+$$
+c\in\mathbb R^n, x\in\mathbb R^n, b\in\mathbb R^m, A\in\mathbb R^{m\times n}, and \quad \lambda\in\mathbb R^m
+$$
+
+And $x,\lambda$ are the decision variables
+
+There then always will exist a **dual** version of this LP, and is as follows:
+$$
+min \quad b^T \lambda 
+$$
+such that
+$$
+A^T\lambda \geq c
+$$
+These LP's can be then be expressed as follows:
+
+Primal:
+$$
+max_{x\geq0}min_{\lambda\geq0}c^Tx+\lambda^T(b-Ax)
+$$
+Dual:
+$$
+min_{\lambda\geq0}max_{x\geq0}c^Tx+\lambda^T(b-Ax)
+$$
+Rmk:
+If max-min = min-max $\implies$ there is **strong duality and both LP's have the same optimal solution**
+
+(note every LP has a dual problem but primal is not necessarily always equal to the dual)
+
+So when does this equality hold?
+
+Its clear that:
+$$
+c^Tx+\lambda^T(b-Ax)\leq max_{x\geq0}c^Tx+\lambda^T(b-Ax) \quad \forall x \geq 0
+$$
+Therefore it holds that:
+$$
+min_{\lambda\geq0}[c^Tx+\lambda^T(b-Ax)]\leq min_{\lambda\geq0}[max_{x\geq0}c^Tx+\lambda^T(b-Ax)] \quad \forall x \geq 0
+$$
+
+Once more maximizing $x\geq0$ on both the LHS and RHS we see:
+$$
+max_{x\geq0}min_{\lambda\geq0}[c^Tx+\lambda^T(b-Ax)]\leq min_{\lambda\geq0}[max_{x\geq0}c^Tx+\lambda^T(b-Ax)] \quad \forall x \geq 0
+$$
+As the RHS becomes constant and only depends on $\lambda$ so the additional max is redundant.
+
+By doing we see that we have recovered the following result
+
+Primal $\leq$ dual
+
+---
+# theorem of weak duality
+
+If
+$$
+x_0\geq 0, \quad Ax_0\leq b,\quad \lambda_0\geq 0, \quad A^T\lambda_0 \geq c
+$$
+Then:
+$$
+c^Tx_0\leq \max_{x\geq0}c^Tx\leq\min_{\lambda\geq 0}b^T\lambda\leq b^T\lambda_0
+$$
+
+
+**Corollary:**
+if the primal and dual are feasible then they are all bounded.
+
+**Rmk:**
+if $c^Tx_0,\quad b^T\lambda_0$ are both feasible then it is possible that $c^Tx_0<b^T\lambda_0$.
+
+**Corollary:**
+if $c^Tx_0=b^T\lambda_0$ then $x_0$ and $\lambda_0$ are the optimal solutions to their respective LPs.
+
+Which see by the following:
+$$
+b^T\lambda_0=c^Tx_0\leq \max_{x\geq0}c^Tx\leq\min_{\lambda\geq 0}b^T\lambda\leq b^T\lambda_0,
+$$
+$$
+c^Tx_0= \max_{x\geq0}c^Tx=\min_{\lambda\geq 0}b^T\lambda= b^T\lambda_0.
+$$
+**Rmk:**
+Any feasible solution to the dual problem gives an upper bound of the objective function for the primal problem. -> if the dual LP is unbounded then the primal problem is not feasible.
+
+**Rmk:**
+**Primal** -> to dual -> **dual** -> to dual -> **primal**.
+
+---
+# Theorem of strong duality
+
+If an LP (primal) has an optimal solution, then so does it's dual LP, and their respective optimal values are equal such that $c^Tx=b^T\lambda$.
+
+Suppose the primal has an optimal solution $x^*$ such that $x\in\mathbb R^n$:
+$$
+x^*=(x_1^*, \cdots, x_n^*).
+$$
+
+then the dual has an optimal solution $\lambda^*$ such that $\lambda\in\mathbb R^m$:
+$$
+\lambda^*=(\lambda_1^*, \cdots, \lambda^*_m).
+$$
+And then  $c^Tx^*=b^T\lambda^*$.
+
+Moreover: from the obj function row of the **optimal final dictionary** of the primal LP, expressed as follows:
+
+$$
+z=z^* + c_1^*x_1+\cdots+c_n^*x_n+c^*_{n+1}x_{n+1}+\cdots+c^*_{n+m}x_{n+m}
+$$
+
+Where variables $x_{n+1} \to x_{n+m}$ are slack variables.
+
+We can then derive a dual optimal solution using the following methodology:
+
+$$
+\lambda^*=(\lambda_1^*, \cdots, \lambda^*_m), \quad \lambda^*_i = -C^*_{n+i}
+$$
+
+
+In essence, the i'th dual variable is equivalent to the negative coefficient of the i'th slack variable coefficient. (n is the number of variables in the primal obj function, and i is the m value of the transposed matrix A from the primal (how many $\lambda$ there are)).
+
+---
+# exploring some of the terminology
+
+Given we have a primal LP with the 
+
+![[Pasted image 20260311225552.png]]
+
+We can see the following:
+
+- The transpose of c is simply the obj function coefficients
+- b is vector comprised of the constraints in the primal
+- A is the mxn matrix constructed by using the coefficients found in the constraints of the primal
+
+From these we can then transpose the necessary matrices / vectors as needed to find the optimal dual solution using the theorem of strong duality:
+![[Pasted image 20260311230042.png]]
+
+As we can see indeed $c^Tx^*=b^T\lambda^*=10$.
+
+--- 
+# when do we have weak vs. strong duality?
+
+As we know from the **fundamental theorem of LP**, an LP only has 3 options as demonstrated in the table below:
+
+
+|                      | Primal | Feasible and optimal | Feasible and unbound | Infeasible   |
+| -------------------- | ------ | -------------------- | -------------------- | ------------ |
+| Dual                 |        |                      |                      |              |
+| Feasible and optimal |        | Strong duality       | not possible         | not possible |
+| Feasible and unbound |        | not possible         | not possible         | Weak duality |
+| Infeasible           |        | not possible         | Weak duality         | possible     |
+
+We know that we can confirm strong duality when:
+$$
+c^Tx^*=b^T\lambda^*=\text{optimal solution for both} 
+$$
+But what about when we only know $x^*$ and not both? Well we cant confirm using strong duality directly as $\lambda^*$ is not given. **We need to use complementary slackness**
+
+---
+# theorem of complementary slackness
+
+Suppose 
+
+$$
+x^*=(x_1^*, \cdots, x_n^*).
+$$
+and
+$$
+\lambda^*=(\lambda_1^*, \cdots, \lambda^*_m).
+$$
+are feasible for both primal and dual problems. Then, **they are optimal IF AND ONLY IF**:
+
+$$
+\begin{align}
+\lambda^*_ix^*_{n+i} = 0 \quad \forall i\in{1\to n}\\
+x^*_j\lambda^*_{m+j}=0 \quad \forall j \in{1\to j}
+\end{align}
+$$
+In essence, the product of the ith dual variable with the ith primal slack variable must be zero.
+Similarly, the product of the jth primal variable with the jth dual slack variable must be zero.
+
+**Core idea:** if we have an optimal $x^*$ we can use CS to get $\lambda^*$ which too should be optimal (CS is used to verify the standard $\lambda^*_i=-C^*_{n+1}$)
+
+An example:
+![[Pasted image 20260311232251.png]]
+
+--- 
+# but how do we *prove* complementary slackness?
+
+Let $x^*$ and $\lambda^*$ be optimal solutions to their respective primal and dual LPs, we then have that
+$$
+x^*,\lambda^*\quad \text{are optimal solutions} \iff \text{they are feasible, AND:} \quad b^T\lambda^*=c^Tx^*
+$$
+$$
+\implies  0\leq \lambda^*\cdot(b-Ax^*)=x^*\cdot(c-A^T\lambda^*) \leq 0
+$$
+Where $b-Ax^*\geq0$ is the primal feasibility (slack) and $c-A^T\lambda^*\leq 0$ is the dual feasibility (slack) from the start of the duality lecture (very similar to the notion of convexity and how stepping in one direction makes you step away from the other etc).
+
+Now, distributing the dot product into the bracket we recover:
+
+$$
+\begin{align}
+LHS & =\lambda^*\cdot b-(Ax^*)^T\cdot\lambda^* \\
+    & = b^T\lambda^*-(x^*)^TA^T\lambda^* \\
+    & = c^Tx^*-x^*\cdot(A^T\lambda^*) \\
+    & = x^*(c-A^T\lambda^*) =RHS
+\end{align}
+\therefore \quad \lambda^*x^*_{slack}=x^*\lambda^*_{slack}=0.
+$$
+
+---
+# proof of strong duality
+
