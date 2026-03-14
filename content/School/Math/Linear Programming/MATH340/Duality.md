@@ -94,7 +94,7 @@ $$
 Any feasible solution to the dual problem gives an upper bound of the objective function for the primal problem. -> if the dual LP is unbounded then the primal problem is not feasible.
 
 **Rmk:**
-**Primal** -> to dual -> **dual** -> to dual -> **primal**.
+**Primal** $\to_{dual}$ **dual** $\to_{dual}$ **primal**.
 
 ---
 # Theorem of strong duality
@@ -268,3 +268,6 @@ cx^*=-c^*_{slack}\cdot b= b^T\lambda^*
 $$
 
 So, **from the theorem of weak duality** we observe that these two values are equivalent, **thus both the primal and the dual have the same optimal value**. Then, because *the primal was arbitrary*, as a consequence we have then proven the theorem of strong duality as we have shown for any optimal primal solution $\exists$ an optimal dual solution that yields the same optimal objective value.
+
+## but *intuitively* what do the primal and dual problems represent in real-world examples?
+
