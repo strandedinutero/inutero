@@ -12,7 +12,7 @@ Ax \leq b, \quad x \geq 0
 $$
 Where
 $$
-c\in\mathbb R^n, x\in\mathbb R^n, b\in\mathbb R^m, A\in\mathbb R^{m\times n}, and \quad \lambda\in\mathbb R^m
+c\in\mathbb R^n, x\in\mathbb R^n, b\in\mathbb R^m, A\in\mathbb R^{m\times n}, \text{and} \quad \lambda\in\mathbb R^m
 $$
 
 And $x,\lambda$ are the decision variables
@@ -269,7 +269,7 @@ $$
 
 So, **from the theorem of weak duality** we observe that these two values are equivalent, **thus both the primal and the dual have the same optimal value**. Then, because *the primal was arbitrary*, as a consequence we have then proven the theorem of strong duality as we have shown for any optimal primal solution $\exists$ an optimal dual solution that yields the same optimal objective value.
 
-## but *intuitively* what do the primal and dual problems represent in real-world examples?
+# but *intuitively* what do the primal and dual problems represent in real-world examples?
 
 
 Economically, consider a factory such that its profit function is defined by 
@@ -292,7 +292,7 @@ A^T\lambda \geq c, \lambda \geq 0.
 $$
 Which ensures the raw-material cost of product j is greater than or equal to the profit for product j, where $\lambda_j$ represents the price the factory will offer for the jth raw material, that is the net value of the jth raw material. Similarly, $\lambda^*$ also represents the net value of the jth raw material, albeit the value used in the optimal production plan that is.
 
-## how does the optimal value change with constraints?
+# how does the optimal value change with constraints?
 
 Consider the typical LP such that:
 $$
@@ -312,7 +312,7 @@ Where, $z^{**}$ represents the money the primal factory can make with $t$ more r
 
 **Rmk:** if $x^*$ is the optimal basic solution and is non-degenerate, then the dual has a unique optimal solution $\lambda^*$. Meaning, the optimal point will not change for small $t$ and we can apply $z^{**} = z^* +\lambda^*\cdot t.$ 
 
-### two formulas that must always hold:
+# two formulas that must always hold:
 
 $$
 c = A^T\lambda - w
