@@ -23,20 +23,20 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
+        header: "JetBrains Mono",
         body: "JetBrains Mono",
         code: "JetBrains Mono",
       },
       colors: {
        lightMode: {
-        light: "#011826", // background
-        lightgray: "#6c96b1", // text highlighting 
+        light: "#00305A", // background
+        lightgray: "#dfe2e4", // text highlighting 
         gray: "#dfe2e4",
         darkgray: "#dfe2e4", // text
         dark: "#dfe2e4", // heading
         secondary: "#357598",
         tertiary: "#6c96b1",
-        highlight: "#42a8c6",
+        highlight: "#7ab1cc",
         textHighlight: "#42a8c6",
         }, 
         darkMode: {

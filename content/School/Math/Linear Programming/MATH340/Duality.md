@@ -271,3 +271,70 @@ So, **from the theorem of weak duality** we observe that these two values are eq
 
 ## but *intuitively* what do the primal and dual problems represent in real-world examples?
 
+
+Economically, consider a factory such that its profit function is defined by 
+$$
+\max c^Tx
+$$
+which represents the total amount of $ the factory can make, limited to constraints:
+$$
+Ax \leq b, x\geq 0.
+$$
+Where $x_i$ represents the amount of the ith product we want to produce at this factory, and its coefficient, $c_i$ representing the amount we can sell one unit of that product for. Then, $a_{ij}$ represents the amount of the jth raw-material needed to produce 1 unit of the ith product, and its constraint, $b_j$ represents the total amount of the jth raw-material we have.
+
+Whereas in the **dual** problem:
+$$
+\min b^T\lambda 
+$$
+represents the total cost to acquire all of the raw-materials limited to constraints:
+$$
+A^T\lambda \geq c, \lambda \geq 0.
+$$
+Which ensures the raw-material cost of product j is greater than or equal to the profit for product j, where $\lambda_j$ represents the price the factory will offer for the jth raw material, that is the net value of the jth raw material. Similarly, $\lambda^*$ also represents the net value of the jth raw material, albeit the value used in the optimal production plan that is.
+
+## how does the optimal value change with constraints?
+
+Consider the typical LP such that:
+$$
+\max c^T x
+$$
+such that $Ax \leq b$ and $x\geq 0$. Where $z^*$ is the optimal value, $x^*$ is the optimal primal solution, and $\lambda^*$ is the optimal dual solution. Now let $t\in\mathbb R^n$ be a vector and consider if we change the constrains such that:
+$$
+Ax \leq b + t.
+$$
+Then our new optimal value becomes:
+$$
+z^{**} = z^* +\lambda^*\cdot t.
+$$
+Where, $z^{**}$ represents the money the primal factory can make with $t$ more raw-materials, $z^*$ represents the optimal value with the original materials, and of course $\lambda^*\cdot t$ the money we have from the extra raw materials.
+
+**Rmk:** For a primal problem, a change in $b$ only changes the feasible region; leaving the obj function unchanged. Whereas, in the dual problem the feasible region stays the same, but the objective function changes.
+
+**Rmk:** if $x^*$ is the optimal basic solution and is non-degenerate, then the dual has a unique optimal solution $\lambda^*$. Meaning, the optimal point will not change for small $t$ and we can apply $z^{**} = z^* +\lambda^*\cdot t.$ 
+
+### two formulas that must always hold:
+
+$$
+c = A^T\lambda - w
+$$
+Which can be expressed as follows:
+$$
+c = \Sigma_{j: v_j^*=0} \lambda^*_ja_j + \Sigma_{i: x^*_i=0}w^*_i(-e_i)
+$$
+Where the first sum represents the linear combination of the jth dual variable with the jth row of the matrix A, given that the jth primal slack variable is equal to zero in accordance with complementary slackness. And the second sum represents the linear combination of the ith dual slack variable with its corresponding negative unit vector, given that the ith primal variable = 0.
+
+This formula has the following counterpart:
+$$
+-b = -Ax -v
+$$
+or
+$$
+b = Ax + v.
+$$
+Which can be expressed as follows:
+$$
+b = \Sigma_{i: w_i^*=0} x_i^*a_i + \Sigma_{j: \lambda_j^*=0}v^*_i(e_j)
+$$
+Where the first sum represents the linear combination of the ith primal variable with the ith column of the matrix A, given that the ith dual slack variable is equal to 0. And the second sum represents the linear combination of the ith primal slack variable with its corresponding negative unit vector, given that the jth dual variable = 0.
+
+These formulas can be used to find the non-zero solutions variables when there is a range of possible options. That is, when the primal optimal solution is degenerate meaning the dual optimal solution is non unique. These formulas can also be used to find the bounds of t such that that a solution will still yield that optimal solution.

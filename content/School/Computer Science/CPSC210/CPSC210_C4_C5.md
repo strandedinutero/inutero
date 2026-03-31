@@ -60,7 +60,7 @@ Extracting class hierarchies:
 Extracting associations:
 
 - To extract associations we need to analyze the fields within classes -> if a class contains a field of another type we say that class is associated with that other type
-- To draw the association we draw a simple arrow and indicate the arity of the association. For example, if we had a class *dog*:
+- To draw the association we draw a simple arrow and indicate the parity of the association. For example, if we had a class *dog*:
 
 ```
 public class Dog {  
@@ -77,7 +77,7 @@ Because when for the entire lifetime of the dog object it is associated with a t
 
 Aggregation relationships:
 
-- If one object is park of another object then we draw the following diagram:
+- If one object is part of another object then we draw the following diagram:
 
 ![[Pasted image 20260304190139.png]]
 

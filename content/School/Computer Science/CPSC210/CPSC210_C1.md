@@ -3,7 +3,7 @@
 
 ## a method is considered robust when every potential input is handled
 
-- For example when a requires clause does not specify a range in the input domain that method would not be considered very rebust
+- For example when a requires clause does not specify a range in the input domain that method would not be considered very robust
 
 Throwing and catching exceptions: ie redundancy
  - A **call-stack** is formed when one method calls another.  If a() called b(), we would see b() stacked on top of a().  We can then say that the return path out of b() would be back down into its calling method, a().
