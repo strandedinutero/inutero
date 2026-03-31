@@ -34,7 +34,7 @@ This all relates back to the fundamental principle of the single point of contro
 
 Design principles help us to construct software that has important qualities, such as maintainability, readability, which is critical for our code to age gracefully.
 
-## The **SOLID** principles
+# The **SOLID** principles
 
 1. Single responsibility
 2. Open-closed
@@ -42,13 +42,14 @@ Design principles help us to construct software that has important qualities, su
 4. Interface segregation
 5. Dependency
 
-In this class we will mainly be discussing 1. and 3.
+In this class we mainly discuss 1. and 3.
 
-### the single responsibility principle:
+## The Single Responsibility Principle:
 
 (very self-explanatory). Essentially each class should be centered around one cohesive concept. Overtime if a class seems as if it has picked up more than one responsibility consider splitting into more than one class.
 
-## The Liskov substitution principle
+## The Liskov Substitution Principle
+
 
 
 

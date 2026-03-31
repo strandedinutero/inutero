@@ -1,0 +1,9 @@
+filters:
+  and:
+    - file.folder == "content/Library"
+views:
+  - type: cards
+    name: View
+    image: note.coverUrl
+    imageFit: contain
+    imageAspectRatio: 1.4
