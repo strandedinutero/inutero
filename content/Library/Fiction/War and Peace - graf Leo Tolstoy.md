@@ -15,7 +15,7 @@ link: https://play.google.com/store/books/details?id=jVMEAAAAYAAJ
 previewLink: http://books.google.ca/books?id=jVMEAAAAYAAJ&printsec=frontcover&dq=war+and+peace&hl=&as_pt=BOOKS&cd=1&source=gbs_api
 isbn13: HARVARD:32044018750919
 ---
-#books 
+#books #fiction  
 
 <div class="book-card">  
   <img src="http://books.google.com/books/content?id=jVMEAAAAYAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" />  

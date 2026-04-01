@@ -1,8 +1,8 @@
 #math #math340 #lp
 
-# duality intro:
+# Duality introduction:
 
-Suppose we have some LP problem in it's **primal** (main) form
+Suppose we have some LP problem in it's *primal* (main) form
 $$
 \max \qquad c^Tx
 $$
@@ -17,7 +17,7 @@ $$
 
 And $x,\lambda$ are the decision variables
 
-There then always will exist a **dual** version of this LP, and is as follows:
+There then always will exist a *dual* version of this LP, and is as follows:
 $$
 \min \quad b^T \lambda 
 $$
@@ -35,8 +35,12 @@ Dual:
 $$
 \min_{\lambda\geq0}\max_{x\geq0}c^Tx+\lambda^T(b-Ax)
 $$
-Rmk:
-If max-min = min-max $\implies$ there is **strong duality and both LP's have the same optimal solution**
+
+And by applying the dual transformation we can move between the primal and dual as the dual of the dual is just the primal problem.
+
+> [!theorem] Theorem
+> If max-min = min-max $\implies$ there is ==strong duality== and both ==LP's have the same optimal solution==
+
 
 (note every LP has a dual problem but primal is not necessarily always equal to the dual)
 
@@ -59,29 +63,39 @@ As the RHS becomes constant and only depends on $\lambda$ so the additional max 
 
 By doing we see that we have recovered the following result
 
-Primal $\leq$ dual
+$$
+\quad \text{Primal} \leq \text{Dual}
+$$
 
 ---
-# theorem of weak duality
+# Theorem of weak duality
 
 If
 $$
 x_0\geq 0, \quad Ax_0\leq b,\quad \lambda_0\geq 0, \quad A^T\lambda_0 \geq c
 $$
-Then:
-$$
-c^Tx_0\leq \max_{x\geq0}c^Tx\leq\min_{\lambda\geq 0}b^T\lambda\leq b^T\lambda_0
-$$
+Then by the Theorem of Weak Duality we have that:
+
+> [!theorem] Theorem of Weak Duality
+>$$
+>
+>c^Tx_0\leq \max_{x\geq0}c^Tx\leq\min_{\lambda\geq 0}b^T\lambda\leq b^T\lambda_0
+>
+>$$
+
+And can see the following properties:
+
+> [!remark] Boundedness
+> If the primal and dual are feasible then they are all bounded.
 
 
-**Corollary:**
-if the primal and dual are feasible then they are all bounded.
+> [!remark] Feasibility
+> if $c^Tx_0,\quad b^T\lambda_0$ are both feasible then it is possible that $c^Tx_0<b^T\lambda_0$.
 
-**Rmk:**
-if $c^Tx_0,\quad b^T\lambda_0$ are both feasible then it is possible that $c^Tx_0<b^T\lambda_0$.
 
-**Corollary:**
-if $c^Tx_0=b^T\lambda_0$ then $x_0$ and $\lambda_0$ are the optimal solutions to their respective LPs.
+> [!theorem] Optimal solutions
+> if $c^Tx_0=b^T\lambda_0$ then $x_0$ and $\lambda_0$ are the optimal solutions to their respective LPs.
+
 
 Which see by the following:
 $$
@@ -90,29 +104,31 @@ $$
 $$
 c^Tx_0= \max_{x\geq0}c^Tx=\min_{\lambda\geq 0}b^T\lambda= b^T\lambda_0.
 $$
-**Rmk:**
-Any feasible solution to the dual problem gives an upper bound of the objective function for the primal problem. -> if the dual LP is unbounded then the primal problem is not feasible.
 
-**Rmk:**
-**Primal** $\to_{dual}$ **dual** $\to_{dual}$ **primal**.
+Furthermore, we can see that a feasible solution to the dual problem gives an upper bound of the objective function for the primal problem. Therefore, ==if the dual LP is unbounded then the primal problem is not feasible.==
 
 ---
 # Theorem of strong duality
 
-If an LP (primal) has an optimal solution, then so does it's dual LP, and their respective optimal values are equal such that $c^Tx=b^T\lambda$.
+==If an LP (primal) has an optimal solution, then so does it's dual LP, and their respective optimal values are equal== such that $c^Tx=b^T\lambda$.
 
-Suppose the primal has an optimal solution $x^*$ such that $x\in\mathbb R^n$:
-$$
-x^*=(x_1^*, \cdots, x_n^*).
-$$
 
-then the dual has an optimal solution $\lambda^*$ such that $\lambda\in\mathbb R^m$:
-$$
-\lambda^*=(\lambda_1^*, \cdots, \lambda^*_m).
-$$
-And then  $c^Tx^*=b^T\lambda^*$.
+> [!theorem] Theorem of Strong Duality
+> Suppose the primal has an optimal solution $x^*$ such that $x\in\mathbb R^n$:
+>$$
+>x^*=(x_1^*, \cdots, x_n^*).
+>$$
+>
+>then the dual has an optimal solution $\lambda^*$ such that $\lambda\in\mathbb R^m$:
+>$$
+>\lambda^*=(\lambda_1^*, \cdots, \lambda^*_m).
+>$$
+>And then  $c^Tx^*=b^T\lambda^*$.
 
-Moreover: from the obj function row of the **optimal final dictionary** of the primal LP, expressed as follows:
+
+
+
+Moreover, from the objective function row of the ==optimal final dictionary== of the primal LP, expressed as follows:
 
 $$
 z=z^* + c_1^*x_1+\cdots+c_n^*x_n+c^*_{n+1}x_{n+1}+\cdots+c^*_{n+m}x_{n+m}
@@ -122,15 +138,18 @@ Where variables $x_{n+1} \to x_{n+m}$ are slack variables.
 
 We can then derive a dual optimal solution using the following methodology:
 
-$$
-\lambda^*=(\lambda_1^*, \cdots, \lambda^*_m), \quad \lambda^*_i = -C^*_{n+i}
-$$
+
+> [!theorem] Dual Optimal Solution Values Take the Form
+> $$
+>\lambda^*=(\lambda_1^*, \cdots, \lambda^*_m), \quad \lambda^*_i = -C^*_{n+i}
+>$$
 
 
-In essence, the i'th dual variable is equivalent to the negative coefficient of the i'th slack variable coefficient. (n is the number of variables in the primal obj function, and i is the m value of the transposed matrix A from the primal (how many $\lambda$ there are)).
+
+In essence, ==the i'th dual variable is equivalent to the negative coefficient of the i'th slack variable coefficient==. (n is the number of variables in the primal obj function, and i is the m value of the transposed matrix A from the primal (how many $\lambda$ there are)).
 
 ---
-# exploring some of the terminology
+# Exploring some of the terminology
 
 Given we have a primal LP with the 
 
@@ -148,9 +167,9 @@ From these we can then transpose the necessary matrices / vectors as needed to f
 As we can see indeed $c^Tx^*=b^T\lambda^*=10$.
 
 --- 
-# when do we have weak vs. strong duality?
+# When do we have weak vs. strong duality?
 
-As we know from the **fundamental theorem of LP**, an LP only has 3 options as demonstrated in the table below:
+As we know from the ==fundamental theorem of LP==, an LP only has 3 options as demonstrated in the table below:
 
 
 |                      | Primal | Feasible and optimal | Feasible and unbound | Infeasible   |
@@ -164,38 +183,41 @@ We know that we can confirm strong duality when:
 $$
 c^Tx^*=b^T\lambda^*=\text{optimal solution for both} 
 $$
-But what about when we only know $x^*$ and not both? Well we cant confirm using strong duality directly as $\lambda^*$ is not given. **We need to use complementary slackness**
+But what about when we only know $x^*$ and not both? Well we cant confirm using strong duality directly as $\lambda^*$ is not given. ==We need to use complementary slackness==
 
 ---
-# theorem of complementary slackness
+# Theorem of complementary slackness
 
-Suppose 
 
-$$
-x^*=(x_1^*, \cdots, x_n^*).
-$$
-and
-$$
-\lambda^*=(\lambda_1^*, \cdots, \lambda^*_m).
-$$
-are feasible for both primal and dual problems. Then, **they are optimal IF AND ONLY IF**:
+> [!theorem] Complementary Slackness
+> Suppose 
+>
+>$$
+>x^*=(x_1^*, \cdots, x_n^*).
+>$$
+>and
+>$$
+>\lambda^*=(\lambda_1^*, \cdots, \lambda^*_m).
+>$$
+>are feasible for both primal and dual problems. Then, **they are optimal IF AND ONLY IF**:
+>
+>$$
+>\begin{align}
+>\lambda^*_ix^*_{n+i} = 0 \quad \forall i\in{1\to n}\\
+>x^*_j\lambda^*_{m+j}=0 \quad \forall j \in{1\to j}
+>\end{align}
+>$$
 
-$$
-\begin{align}
-\lambda^*_ix^*_{n+i} = 0 \quad \forall i\in{1\to n}\\
-x^*_j\lambda^*_{m+j}=0 \quad \forall j \in{1\to j}
-\end{align}
-$$
 In essence, the product of the ith dual variable with the ith primal slack variable must be zero.
 Similarly, the product of the jth primal variable with the jth dual slack variable must be zero.
 
-**Core idea:** if we have an optimal $x^*$ we can use CS to get $\lambda^*$ which too should be optimal (CS is used to verify the standard $\lambda^*_i=-C^*_{n+1}$)
+==Core idea:== if we have an optimal $x^*$ we can use CS to get $\lambda^*$ which too should be optimal (CS is used to verify the standard $\lambda^*_i=-C^*_{n+1}$)
 
 An example:
 ![[Pasted image 20260311232251.png]]
 
 --- 
-# but how do we *prove* complementary slackness?
+# But how do we *prove* complementary slackness?
 
 Let $x^*$ and $\lambda^*$ be optimal solutions to their respective primal and dual LPs, we then have that
 $$
@@ -215,11 +237,11 @@ LHS & =\lambda^*\cdot b-(Ax^*)^T\cdot\lambda^* \\
     & = c^Tx^*-x^*\cdot(A^T\lambda^*) \\
     & = x^*(c-A^T\lambda^*) =RHS
 \end{align}
-\therefore \quad \lambda^*x^*_{slack}=x^*\lambda^*_{slack}=0.
+\quad \therefore \quad \lambda^*x^*_{slack}=x^*\lambda^*_{slack}=0.
 $$
 
 ---
-# proof of strong duality
+# Proof of strong duality
 
 Let $x=(x_1,\cdots,x_n)$ be the decision variable, let $x_{slack}=b-Ax\geq 0$, and let $x^*=(x_1^*, \cdots, x_n^*)$ be the optimal solution. Now, let the final optimal dictionary of this LP have the form:
 $$
@@ -267,38 +289,38 @@ $$
 cx^*=-c^*_{slack}\cdot b= b^T\lambda^*
 $$
 
-So, **from the theorem of weak duality** we observe that these two values are equivalent, **thus both the primal and the dual have the same optimal value**. Then, because *the primal was arbitrary*, as a consequence we have then proven the theorem of strong duality as we have shown for any optimal primal solution $\exists$ an optimal dual solution that yields the same optimal objective value.
+So, ==from the theorem of weak duality== we observe that these two values are equivalent, ==thus both the primal and the dual have the same optimal value.== Then, because *the primal was arbitrary*, as a consequence we have then proven the theorem of strong duality as we have shown for any optimal primal solution $\exists$ an optimal dual solution that yields the same optimal objective value.
 
-# but *intuitively* what do the primal and dual problems represent in real-world examples?
+# But *intuitively* what do the primal and dual problems represent in real-world examples?
 
 
-Economically, consider a factory such that its profit function is defined by 
+Economically, consider a factory such that its ==profit function== is defined by 
 $$
 \max c^Tx
 $$
-which represents the total amount of $ the factory can make, limited to constraints:
+which represents the ==total amount of $ the factory can make==, limited to constraints:
 $$
 Ax \leq b, x\geq 0.
 $$
-Where $x_i$ represents the amount of the ith product we want to produce at this factory, and its coefficient, $c_i$ representing the amount we can sell one unit of that product for. Then, $a_{ij}$ represents the amount of the jth raw-material needed to produce 1 unit of the ith product, and its constraint, $b_j$ represents the total amount of the jth raw-material we have.
+Where $x_i$ represents ==the amount of the i'th product== we want to produce at this factory, and its coefficient, $c_i$ representing ==the amount we can sell one unit of that product for==. Then, $a_{ij}$ represents the ==amount of the j'th raw-material needed to produce 1 unit of the i'th product==, and its constraint, $b_j$ represents the ==total amount of the j'th raw-material we have.==
 
-Whereas in the **dual** problem:
+Whereas in the dual problem:
 $$
 \min b^T\lambda 
 $$
-represents the total cost to acquire all of the raw-materials limited to constraints:
+represents the ==total cost to acquire all of the raw-materials== limited to constraints:
 $$
 A^T\lambda \geq c, \lambda \geq 0.
 $$
-Which ensures the raw-material cost of product j is greater than or equal to the profit for product j, where $\lambda_j$ represents the price the factory will offer for the jth raw material, that is the net value of the jth raw material. Similarly, $\lambda^*$ also represents the net value of the jth raw material, albeit the value used in the optimal production plan that is.
+Which ensures the raw-material cost of product j is greater than or equal to the profit for product j, where $\lambda_j$ represents the price the factory will offer for the j'th raw material, ==that is the net value of the j'th raw material==. Similarly, $\lambda^*$ also represents the net value of the j'th raw material, albeit the value used in the optimal production plan that is.
 
-# how does the optimal value change with constraints?
+# How does the optimal value change with constraints?
 
 Consider the typical LP such that:
 $$
 \max c^T x
 $$
-such that $Ax \leq b$ and $x\geq 0$. Where $z^*$ is the optimal value, $x^*$ is the optimal primal solution, and $\lambda^*$ is the optimal dual solution. Now let $t\in\mathbb R^n$ be a vector and consider if we change the constrains such that:
+such that $Ax \leq b$ and $x\geq 0$. Where $z^*$ is the optimal value, $x^*$ is the optimal primal solution, and $\lambda^*$ is the optimal dual solution. Now let $t\in\mathbb R^n$ be a vector and consider if we change the constraints such that:
 $$
 Ax \leq b + t.
 $$
@@ -308,11 +330,19 @@ z^{**} = z^* +\lambda^*\cdot t.
 $$
 Where, $z^{**}$ represents the money the primal factory can make with $t$ more raw-materials, $z^*$ represents the optimal value with the original materials, and of course $\lambda^*\cdot t$ the money we have from the extra raw materials.
 
-**Rmk:** For a primal problem, a change in $b$ only changes the feasible region; leaving the obj function unchanged. Whereas, in the dual problem the feasible region stays the same, but the objective function changes.
 
-**Rmk:** if $x^*$ is the optimal basic solution and is non-degenerate, then the dual has a unique optimal solution $\lambda^*$. Meaning, the optimal point will not change for small $t$ and we can apply $z^{**} = z^* +\lambda^*\cdot t.$ 
+> [!remark] A change in constraints
+> For a primal problem, a change in $b$ only changes the feasible region; leaving the obj function unchanged. Whereas, in the dual problem the feasible region stays the same, but the objective function changes.
 
-# two formulas that must always hold:
+
+
+> [!remark] Uniqueness
+> If $x^*$ is the optimal basic solution and is non-degenerate, then the dual has a unique optimal solution $\lambda^*$. Meaning, the optimal point will not change for small $t$ and we can apply $z^{**} = z^* +\lambda^*\cdot t.$ 
+
+
+# Slack form equations and use cases
+
+Given that we can express the dual slack with $w$ s.t. $w = A^T - c$ it follows that we can then write:
 
 $$
 c = A^T\lambda - w
@@ -321,11 +351,11 @@ Which can be expressed as follows:
 $$
 c = \Sigma_{j: v_j^*=0} \lambda^*_ja_j + \Sigma_{i: x^*_i=0}w^*_i(-e_i)
 $$
-Where the first sum represents the linear combination of the jth dual variable with the jth row of the matrix A, given that the jth primal slack variable is equal to zero in accordance with complementary slackness. And the second sum represents the linear combination of the ith dual slack variable with its corresponding negative unit vector, given that the ith primal variable = 0.
+Where the first sum represents the linear combination of the j'th dual variable with the j'th row of the matrix A, given that the j'th primal slack variable is equal to zero ==in accordance with complementary slackness.== And the second sum represents the linear combination of the i'th dual slack variable with its corresponding negative unit vector, ==given that the i'th primal variable = 0.==
 
-This formula has the following counterpart:
+This formula has the following counterpart for the primal slack:
 $$
--b = -Ax -v
+v = b - Ax
 $$
 or
 $$
@@ -335,6 +365,11 @@ Which can be expressed as follows:
 $$
 b = \Sigma_{i: w_i^*=0} x_i^*a_i + \Sigma_{j: \lambda_j^*=0}v^*_i(e_j)
 $$
-Where the first sum represents the linear combination of the ith primal variable with the ith column of the matrix A, given that the ith dual slack variable is equal to 0. And the second sum represents the linear combination of the ith primal slack variable with its corresponding negative unit vector, given that the jth dual variable = 0.
+Where the first sum represents the linear combination of the i'th primal variable with the i'th column of the matrix A, ==given that the i'th dual slack variable is equal to 0==. And the second sum represents the linear combination of the i'th primal slack variable with its corresponding negative unit vector, ==given that the j'th dual variable = 0.==
 
-These formulas can be used to find the non-zero solutions variables when there is a range of possible options. That is, when the primal optimal solution is degenerate meaning the dual optimal solution is non unique. These formulas can also be used to find the bounds of t such that that a solution will still yield that optimal solution.
+==These formulas can be used to find the non-zero solution variables when there is a range of possible options==. That is, when the primal optimal solution is degenerate meaning the dual optimal solution is non unique. These formulas ==can also be used to find the bounds of t such that that a solution will still yield that optimal solution.==
+
+Some examples:
+![[IMG_4004.jpg]]
+
+![[IMG_4003.jpg]]

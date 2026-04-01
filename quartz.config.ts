@@ -36,8 +36,8 @@ const config: QuartzConfig = {
         dark: "#dfe2e4", // heading
         secondary: "#357598",
         tertiary: "#6c96b1",
-        highlight: "#7ab1cc",
-        textHighlight: "#7ab1cc",
+        highlight: "#7ab1cc2d", // link highlighting
+        textHighlight: "#0069c467",
         }, 
         darkMode: {
           light: "#0B0E14",

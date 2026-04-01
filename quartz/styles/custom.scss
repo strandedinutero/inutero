@@ -21,41 +21,10 @@
 html, body {
   overflow-x: hidden;
 }
-/*
-/* Apply to the whole page */
-/* body {
-  
-  background-image: 
-    linear-gradient(#2e2f2fa3 1px, transparent 1px),
-    linear-gradient(90deg, #333 1px, transparent 1px);
-  background-size: 20px 20px; /* Grid cell size */
 
-/* body {
-  background-color: #011826;
-  position: relative;
+.callout[data-callout="theorem"] {
+  --color: #448aff;
+  --border: #448aff44;
+  --bg: #448aff10;
+  --callout-icon: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 7v14'/%3E%3Cpath d='M16 12h2'/%3E%3Cpath d='M16 8h2'/%3E%3Cpath d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/%3E%3Cpath d='M6 12h2'/%3E%3Cpath d='M6 8h2'/%3E%3C/svg%3E");
 }
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-
-  $grid-size: 20px;
-  $grid-color: rgba(200, 200, 200, 0.05);
-
-  background-image:
-    linear-gradient($grid-color 1px, transparent 1px),
-    linear-gradient(90deg, $grid-color 1px, transparent 1px);
-  background-size: $grid-size $grid-size;
-
-  /* Rotate and skew for subtle 3D tilt */
-/*   transform: rotate(-15deg) skewX(10deg) skewY(5deg);
-  transform-origin: center;
-
-  /* Ensure rotated/skewed background covers the viewport */
- /*  width: 200%;
-  height: 200%;
-  top: -50%;
-  left: -50%;
-} */ 
