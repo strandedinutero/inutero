@@ -3,7 +3,7 @@
 
 Testing exceptions:
 - When testing exceptions you must test that they are thrown when expected to be thrown and not thrown when not expected to be thrown
-```
+```java
 - A simple way to test exceptions within a JUnit test is to call a method, and then fail if the exception is caught when it shouldn't be:
 
 try {  

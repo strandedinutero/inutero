@@ -6,19 +6,19 @@
 
 Variable declaration when creating an object dictates the object's apparent type and initialization/instantiation sets the actual type:
 
-```
+```Java
 ApparentTypeName object = new ActualTypeName();
 ```
 
 This can also be performed in a method signature by using the parameter declaration:
 
-```
+```Java
 public void method(ApparentTypeName paramName)
 ```
 
 Setting the actual type of an object can also be done by passing the object as an argument:
 
-```
+```Java
 methodName(new ActualTypeName());
 ```
 

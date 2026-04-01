@@ -23,7 +23,7 @@ Overriding equals transforms the diagram to this:
 ![[Pasted image 20260305000241.png]]
 But now all the objects in the same equivalence class have the same hash code, so hashCode must too be overridden.
 Eg.
-```
+```java
 @Override  
 public int hashCode() {  
     int result = name.hashCode();  

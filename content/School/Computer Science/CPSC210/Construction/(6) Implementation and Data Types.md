@@ -15,7 +15,7 @@ Implementing UML class diagrams: (\* interchanged for 0..\*\)
 
 We can see the following:
 
-```
+```java
 Public class SelectionTool extends Tool
 
 Public class CreationTool extends Tool
@@ -29,20 +29,20 @@ Public class Circle implements Figure
 **When implementing an association we need to consider both directionality and cardinality**
 
 The Drawing class has a unidirectional association with DrawingEditor and uses multiple of its objects $$ \therefore$$ 
-```
+```java
 public class Drawing Editor {
 	private Collection<Drawing> drawings;
 }
 ```
 
 The Drawing class also has a bidirectional association with the Tool class $$\therefore$$ 
-```
+```java
 public class DrawingEditor {
    private Collection<Tool> tools;
    ...
 }
 ```
-```
+```java
 public class Tool {
    private DrawingEditor editor;
    ...
@@ -85,7 +85,7 @@ List operations:
 - set()
 
 Here's a method to swap two elements in a list:
-```
+```java
 public static <E> void swap(List<E> a, int i, int j) {
     E tmp = a.get(i);
     a.set(i, a.get(j));
@@ -151,7 +151,7 @@ Aggregate options:
 
 - Obtain a stream and perform aggregate operations on it:
 
-```
+```java
 myShapesCollection.stream()
 .filter(e -> e.getColor() == Color.RED)
 .forEach(e -> System.out.println(e.getName()));
@@ -159,7 +159,7 @@ myShapesCollection.stream()
 
 For each:
 
-```
+```java
 for (Object o : collection)
     System.out.println(o);
 ```
@@ -168,7 +168,7 @@ Iterators:
 
 The iterator interface is as follows:
 
-```
+```java
 public interface Iterator<E> {
     boolean hasNext();
     E next();
@@ -188,7 +188,7 @@ Overriding equals:
 - Recall that when you compare two objects with == to see if they are equal you are actually checking to see if they refer to the same object 
 
 Eg:
-```
+```java
 String s = new String("a");  
 String t = new String ("a");
 s == t; // is false
@@ -206,7 +206,7 @@ Ensuring the `equals` method works correctly typically means overriding `equals`
 
 The basic formula for overriding equals to ensure the implementation follows the contract:
 
-```
+```java
 public class Rectangle implements Figure {
 
    private Point topLeftCorner; 
@@ -247,7 +247,7 @@ Overriding hashCode:
 
 How to override hashCode so that we get reasonable hash codes that meet these specs:
 
-```
+```java
 public class Rectangle implements Figure {
    private final static int HASH_MULTIPLER = 11; // a prime num
    

@@ -10,7 +10,7 @@ Throwing and catching exceptions: ie redundancy
 - When an exception is thrown -> the method immediately exits and nothing more in the method runs
 - **But** if the exception is a checked exception the method must indicate it may be thrown
 - We cant catch exceptions by using this architecture:
-```
+```java
 try { 
     methodName();
 	} catch (ExceptionName e) {
@@ -25,7 +25,7 @@ try {
 - When an exception is thrown in a method it immediately terminates and execution is returned to the **calling** method which can either catch the method or also be terminated and have execution return to it's caller and so forth...
 - Catching a thrown exception looks like this:
   public void someMethod() { 
-```
+```java
 public void someMethod() { 
     try {
         ...
@@ -48,7 +48,7 @@ public void someMethod() {
 - Checked exceptions should be used for recoverable conditions (ie if you can fix the problem)
 - Unchecked exceptions should be used for for problems that cannot be fixed
 - Note exceptions can be thrown from anywhere, including from within a catch block:
-```
+```java
 try {  
     amethod();  
 } catch (Exception someException) {  
@@ -59,7 +59,7 @@ try {
 Multiple Handlers:
 - A try catch statement is not limited to only one catch statement - it can have multiple:(goes through each catch block in turn executing on the first match)
 
-```
+```java
 int n; 
 try {
 	n = nthDayInYear(-1, -1, -1);
@@ -75,7 +75,7 @@ try {
 
 - A try catch blow can have a third block -> *finally*
 - The finally block executes after the catch block whether or not the exception was actually caught, **or before** the method exits if an exception is thrown in the catch block:
-```
+```java
 try {  
     otherMethod();  
 } catch (SomeException e) {  
@@ -102,7 +102,7 @@ Invariants:
 - Where if getTimesFed() >= 0 evaluated to true then control flows to the next statement in the method, if false an assertion error exception is thrown
 - We can further implement it as follows: (check at the start and end of the method)
 
-```
+```java
 class Animal { ...
     public void recordLastFeeding(List<FeedingRecord> foodEaten) { 
         hasValidState();

@@ -19,7 +19,7 @@ For example:
 ![[Pasted image 20260304185124.png]]
 For the following code:
 
-```
+```java
 /** 
  * JDayChooser is a class for choosing a day
  *
@@ -62,7 +62,7 @@ Extracting associations:
 - To extract associations we need to analyze the fields within classes -> if a class contains a field of another type we say that class is associated with that other type
 - To draw the association we draw a simple arrow and indicate the parity of the association. For example, if we had a class *dog*:
 
-```
+```java
 public class Dog {  
     private Toy toy;   
 }
