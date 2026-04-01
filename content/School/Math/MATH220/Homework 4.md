@@ -1,6 +1,7 @@
+#math #math220 #proof
 ## Solutions to homework 4
 
-1. Your answer to question 1.
+1. Question 1.
 
    > [!proof] Proof
    > 
@@ -86,7 +87,7 @@
    > $$
    > Therefore, we have shown that the only $n\in\mathbb Z$ such that $n^2+1$ is a perfect square is $n=0.$ ◻
 
-2. Your solution to question 2.
+2. Question 2.
 
    > [!proof] Proof
    > 
@@ -115,7 +116,7 @@
    > $$
    > Therefore we have shown $c$ can be expressed as a multiple of $a$, and indeed that $a\mid bc \implies a \mid c$. ◻
 
-3. Your solution to question 3.
+3. Question 3.
 
    > [!proof] Proof
    > 
@@ -148,7 +149,7 @@
    > $$
    > is proven to be true in the solution to (3b), and therefore the original statement must then be false. ◻
 
-4. Your solution to question 4.
+4. Question 4.
 
    > [!proof] Proof
    > 
@@ -190,7 +191,7 @@
    > $$
    > whenever $x \geq M$. ◻
 
-5. Your solution to question 5.
+5. Question 5.
 
    > [!proof] Proof
    > 
@@ -221,7 +222,7 @@
    > $$
    > and therefore $f(x)$ is indeed continuous at $x=0$. ◻
 
-6. Your solution to question 6.
+6. Question 6.
 
    > [!proof] Proof
    > 

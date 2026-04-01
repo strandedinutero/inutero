@@ -2,7 +2,7 @@
 
 ## Solutions to homework 9
 
-1. Your answer to question 1.
+1. Question 1.
 
    > [!proof] Proof
    > 
@@ -120,7 +120,7 @@
    >
    > However, if $x_1,x_2 \ge 1$ and $x_1x_2 = 1$, the only possibility is $x_1 = x_2 = 1$. Hence in every case we may conclude $x_1 = x_2$. And thus by definition, $j$ is indeed injective. ◻
 
-2. Your solution to question 2.
+2. Question 2.
 
    > [!proof] Proof
    > 
@@ -137,7 +137,7 @@
    >
    > So, if we have some $a\in f^{-1}(X)$, it follows that $f(a) \in X$, which demonstrates that $f(f^{-1}(X)) \subseteq X$. Then, if we have some $b\in X$, we know that there is some $a\in A$ such that $f(a) = b$ as $f$ is a surjective function, so similarly, we then have that $a\in f^{-1}(X)$ and $f(a) = b \in f(f^{-1}(X))$, and thus $X \subseteq f(f^{-1}(X))$. ◻
 
-3. Your solution to question 3.
+3. Question 3.
 
    > [!proof] Proof
    > 
@@ -165,7 +165,7 @@
    >
    > Then, suppose $x\notin X$, since $f$ is injective $f(x)\neq f(y)$ for any $y\in X$, and thus $f(x) \notin f(X)$, so $x\notin f^{-1}(f(X))$, hence $f^{-1}(f(X)) \subseteq X$. ◻
 
-4. Your solution to question 4.
+4. Question 4.
 
    > [!proof] Proof
    > 
@@ -173,7 +173,7 @@
    >
    > Then, let $y_1 \in A$, now because $f \circ f$ is surjective, $\exists y_2 \in A$ such that $f(f(y_2))=y_1$, and similarly $\exists y_3 = f(y_2) \in A$ where $f(y_3) = y_1$ , therefore, $f$ is also surjective. ◻
 
-5. Your solution to question 5.
+5. Question 5.
 
    > [!proof] Proof
    > 
@@ -213,7 +213,7 @@
    >
    > Given we have shown $f$ is both injective and surjective the proof is complete. ◻
 
-6. Your solution to question 6.
+6. Question 6.
 
    > [!proof] Proof
    > 

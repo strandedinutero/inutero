@@ -1,6 +1,7 @@
+#math #math220 #proof
 ## Solutions to homework 3
 
-1. Your answer to question 1.
+1. Question 1.
 
    > [!proof] Proof
    > 
@@ -35,7 +36,7 @@
    > $$
    > And the original statement is **true**, for example, let $x=-2$ and $y=-1$, and thus we have shown that there does exist $x,y\in\mathbb R$ such that $(x^2\geq y^2 \land x \leq y)$.
 
-2. Your solution to question 2.
+2. Question 2.
 
    > [!proof] Proof
    > 
@@ -76,7 +77,7 @@
    > $$
    > Therefore, we have shown that if $a>2$, $\exists x \in S_a$ and thus $S_a \neq \emptyset$. And thus we have shown $S_a = \emptyset \iff a \in (-\infty, 2]$ to be true by proving the contrapositive. ◻
 
-3. Your solution to question 3.
+3. Question 3.
 
    > [!proof] Proof
    > Let
@@ -106,7 +107,7 @@
    >
    > Now, suppose $5\mid y$, then it follows $5\mid (x+y)$, or suppose $6\mid y$, it also then follows that $6\mid (x+y)$. Thus, we have that $\forall y \in A, \exists x \in A$ such that $x+y\in A$. ◻
 
-4. Your solution to question 4.
+4. Question 4.
 
    > [!proof] Proof
    > 
@@ -124,7 +125,7 @@
    >
    > Moreover, the statement (b) is **true**, for instance let $y=\frac{1}{2}$, then for all $n\in\mathbb Z$ greater than 1, $\left(\frac{1}{2}\right)^n<\frac{1}{2}$ holds.
 
-5. Your solution to question 5.
+5. Question 5.
 
    > [!proof] Proof
    > 
@@ -203,7 +204,7 @@
    >
    > Therefore our proof is complete given we have shown $\exists b \in\mathbb Z$, $\forall a \in\mathbb Z$, such that $a^2 +  b^2 \equiv 1 \mod 3$ holds true. ◻
 
-6. Your solution to question 6.
+6. Question 6.
 
    > [!proof] Proof
    >
@@ -222,7 +223,7 @@
    > \exists \epsilon > 0, \forall M > 0, \quad \text{such that} \quad \exists x \geq M \quad \text{for which} \quad \left| 1 - \frac{x^2}{x^2 + 1} \right | \geq \epsilon.
    > $$
 
-7. Your solution to question 7.
+7. Question 7.
 
    > [!proof] Proof
    > For (a) we want to disprove the following statement:

@@ -1,6 +1,8 @@
+#math #math220 #proof
 ## Solutions to homework 2
 
-1. Your answer to question 1.
+1. Question 1.
+
 
    > [!proof] Proof
    > 
@@ -32,7 +34,7 @@
    > $$
    > in which it is clear $ab$ is in fact even as it expressed as a multiple of 2. Therefore, since we have demonstrated the contrapositive statement is true, indeed the original statement must then also be true. ◻
 
-2. Your solution to question 2.
+2. Question 2.
 
    > [!proof] Proof
    > 
@@ -70,7 +72,7 @@
    > $$
    > Therefore, given we have demonstrated there is no $a\in\mathbb Z$ for which $4\mid a^2 -3$ holds true within the domain of $\mathbb Z$, it then must be true that for all $a\in\mathbb Z$ we have that $4\nmid a^2 -3$. ◻
 
-3. Your solution to question 3.
+3. Question 3.
 
    > [!proof] Proof
    > 
@@ -91,7 +93,7 @@
    > \frac{2x-1}{x}>1 \implies x>1 
    > $$
 
-4. Your solution to question 4.
+4. Question 4.
 
    > [!proof] Proof
    > 
@@ -119,7 +121,7 @@
    >
    > Thus we have shown that for all $x\in\mathbb R$, $x^2 + |x-6|>5$ holds true. ◻
 
-5. Your solution to question 5.
+5. Question 5.
 
    > [!proof] Proof
    > 
@@ -170,7 +172,7 @@
    > $$
    > The original statement must then be true and indeed if $5\nmid (n^2-1)(n^2-4)$ then necessarily $5\mid n$. ◻
 
-6. Your solution to question 6.
+6. Question 6.
 
    > [!proof] Proof
    > 
@@ -224,7 +226,7 @@
    > $$
    > Finally, given we have demonstrated $\sim P \iff \sim Q$, the original statement must then also hold true such that $3\nmid (x^3 + y^3)$ if and only if $3\nmid (x+y)$. ◻
 
-7. Your solution to question 7.
+7. Question 7.
 
    > [!proof] Proof
    > 

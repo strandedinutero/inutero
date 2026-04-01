@@ -1,6 +1,7 @@
+#math #math220 #proof
 ## Solutions to homework 8
 
-1. Your answer to question 1.
+1. Question 1.
 
    > [!proof] Proof
    > 
@@ -21,7 +22,7 @@
    > $$
    > Thus we can see that $(a,b)\in R\cup S$ and $(b,c)\in R\cup S$, but $(a,c)\notin R\cup S$. Therefore transitivity indeed fails for $R\cup S$, and $R\cup S$ cannot be an equivalence relation. ◻
 
-2. Your solution to question 2.
+2. Question 2.
 
    > [!proof] Proof
    > 
@@ -35,7 +36,7 @@
    > $$
    > However, it follows that $\cos^2(x)=\tfrac12$ is satisfied only by $x$ such that $\cos x=\pm\tfrac{1}{\sqrt2}$. Hence not every $x$ satisfies $xRx$, so indeed the relation $R$ is not reflexive and therefore cannot be an equivalence relation. ◻
 
-3. Your solution to question 3.
+3. Question 3.
 
    > [!proof] Proof
    > 
@@ -55,7 +56,7 @@
    >
    > Therefore, we have proven $R$ is an equivalence relation on $\mathbb{R}^2$, and further that the equivalence classes of $R$ are exactly the lines $L_b$, that is to say, the set of all lines parallel to $y=3x$ is the set of equivalence classes of $R$. ◻
 
-4. Your solution to question 4.
+4. Question 4.
 
    > [!proof] Proof
    > 

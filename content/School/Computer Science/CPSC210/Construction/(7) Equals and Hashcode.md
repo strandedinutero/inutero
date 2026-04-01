@@ -2,7 +2,7 @@
 #cs #cs210 
 
 # 1. `==` compares **object references** (memory addresses).
-# 2. `.equals()` compares **object content** — _but **only if the class overrides it_**. Otherwise it behaves just like `==`.
+# 2. `.equals()` compares **object content** - but *only if the class overrides it* Otherwise it behaves just like `==`.
 
 **Sometimes to find an element in a collection, you must override equals and hashcode for its type.**
 

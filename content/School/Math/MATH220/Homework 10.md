@@ -2,7 +2,7 @@
 
 ## Solutions to homework 10
 
-1. Your answer to question 1.
+1. Question 1.
 
    > [!proof] Proof
    > 
@@ -44,7 +44,7 @@
    > \end{cases}
    > $$ 
    
-2. Your solution to question 2.
+2. Question 2.
 
    Consider a function $f:A\to B$ between sets $A$ and $B$. Define
    $$
@@ -97,7 +97,7 @@
    > F(X)=f(X)=\{b\}.
    > $$
    > Since $X\neq\varnothing$, pick $x\in X$. Then $f(x)\in\{b\}$, hence $f(x)=b$. Thus every $b\in B$ has a preimage, so $f$ is surjective. ◻
-3. Your solution to question 3.
+3. Question 3.
 
    > [!proof] Proof
    > 
@@ -124,7 +124,7 @@
    > $$
    > We can see that the left-hand side $4k$ is indeed even, whereas the right-hand side $6m+1$ is odd. Thus we have reached a contradiction therefore showing no integer $a$ can satisfy both congruences simultaneously and that no such $a$ exists. ◻
 
-4. Your solution to question 4.
+4. Question 4.
 
    > [!proof] Proof
    > 
@@ -150,7 +150,7 @@
    >
    > Thus our assumption was false, and there must exist indices $i\neq j$ with $|x_i-x_j|\le\tfrac12$. ◻
 
-5. Your solution to question 5.
+5. Question 5.
 
    > [!proof] Proof
    > 
@@ -195,7 +195,7 @@
    > $$
    > has no integer solutions. ◻
 
-6. Your solution to question 6.
+6. Question 6.
 
    > [!proof] Proof
    > 
@@ -219,7 +219,7 @@
    > $$
    > is rational. Thus contradicting the fact that $\sqrt{3}$ is irrational. Thus our assumption was false, and $\sqrt{3}+\sqrt{43}$ is indeed irrational. ◻
 
-7. Your solution to question 7.
+7. Question 7.
 
    > [!proof] Proof
    > 

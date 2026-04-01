@@ -1,7 +1,10 @@
-1. Your answer to question 1.  
+#math #math220 #proof
+## Solutions to homework 1
+
+1. Question 1
   
-> [!proof]  
-> *Proof.*  
+> [!proof]  Proof
+> 
 >  
 > 1. The statement "2 is even and 11 is prime" is true and can be written in the form:  
 > $$  
@@ -35,7 +38,7 @@
 > \text{Where R: The square of $x$ is $> 9$, P: $x < -3$, and Q: $x > 3$}  
 > $$  
   
-2. Your solution to question 2.  
+2. Question 2.  
   
 > [!proof]  
 > *Proof.* Given we have $a \in \mathbb{Z}$. Further, assuming $5a + 11$ is odd, then to prove $9a + 3$ is also odd, let us first express $5a + 11$ as follows  
@@ -56,7 +59,7 @@
 > $$  
 > Now, because it holds that $(k + 2a - 4) \in \mathbb{Z}$ it is clear $2(k + 2a - 4) + 1$ is odd, and thus $9a + 3$ is also odd. ◻  
   
-3. Your solution to question 3.  
+3. Question 3.  
   
 > [!proof]  
 > *Proof.* Given we have $n \in \mathbb{Z}$ and assuming that $3 \mid n - 2$ in order to then prove $3 \nmid n^2 + 2n + 8$ let us first observe that $n - 2$ can be written as an integer multiple of 3 such that  
@@ -83,10 +86,11 @@
 > $$  
 > And thus it holds that $3 \nmid n^2 + 2n + 8$. ◻  
   
-4. Your solution to question 4.  
+4. Question 4.  
   
-> [!proof]  
-> *Proof.* Let $x, y \in \mathbb{R}$, then to show that $xy \leq \tfrac{1}{2}(x^2 + y^2)$ let us study the difference between these terms  
+> [!proof]  Proof
+> 
+> Let $x, y \in \mathbb{R}$, then to show that $xy \leq \tfrac{1}{2}(x^2 + y^2)$ let us study the difference between these terms  
 > $$  
 > \tfrac{1}{2}(x^2 + y^2) - xy  
 > $$  
@@ -108,8 +112,9 @@
 > x^2 + y^2 \geq 2xy \iff xy \leq \tfrac{1}{2}(x^2 + y^2)  
 > $$  
 > And thus we have shown that for $x, y \in \mathbb{R}$, $xy \leq \tfrac{1}{2}(x^2 + y^2)$. ◻  
-  5. Your solution to question 5.  
-  
+
+5.  Question 5
+
 > [!proof]  
 > *Proof.* Let $n, a, b, c, d \in \mathbb{Z}$ with $n > 0$, then assuming $n \mid a$ and $n \mid c$, in order to then prove $n \mid (ab + cd + ac)$ we can first recognize that $a$ and $c$ can be written as integer multiples of $n$ such that  
 > $$  
@@ -127,7 +132,7 @@
 > $$  
 > Thus we have shown $ab + cd + ac$ can be written as a multiple of $n$ and therefore $n \mid (ab + cd + ac)$ holds as per the principles of division. ◻  
   
-6. Your solution to question 6.  
+6. Question 6.  
   
 > [!proof]  
 > *Proof.* Given $a \in \mathbb{Z}$ we want to prove that if $3a + 1$ is odd then $5a + 2$ is even, however, my friend's work is not correct as they state:  
@@ -156,7 +161,7 @@
 > $$  
 > And thus I have shown that if $3a + 1$ is odd for $a \in \mathbb{Z}$ then $5a + 2$ must then be even as it can be expressed as a multiple of 2. ◻  
   
-7. Your solution to question 7.  
+7. Question 7.  
   
 > [!proof]  
 > *Proof.* Given the supplied definition of *funky* numbers above, if we have some $a > 0$ and $b > 0$ that are *funky*, then so is their geometric average, that is $\sqrt{ab}$.  
