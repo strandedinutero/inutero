@@ -1,8 +1,8 @@
 #cs #cs210 #OOP
 
-# cohesion and coupling
+# Cohesion and Coupling
 
-## cohesion
+## Cohesion
 
 ==(what the class does and how well it goes together)==
 
@@ -10,7 +10,7 @@ OOP / systematic programming is built on the fundamental idea that each class sh
 
 This is referred to as *cohesion*, you can assess assess cohesion by drawing a **usage graph** and if there is clear clustering you may safely split the class into its respective clusters to be more cohesive.
 
-## coupling
+## Coupling
 
 ==(how the class does it and what goes on between classes)==
 

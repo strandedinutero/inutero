@@ -13,32 +13,26 @@ jupyter:
     language: python
     name: python3
 ---
-
+### Plotting the function $y' = t - y^2$
 
 ```python
 import numpy as np  
 import matplotlib.pyplot as plt  
   
-x = np.linspace(-3, 3, 25)  
-y = np.linspace(-3, 3, 25)  
-X, Y = np.meshgrid(x, y)  
-  
-M = X**2  
-U = np.ones_like(M)  
-V = M  
-L = np.sqrt(U**2 + V**2)  
-U = U / L  
-V = V / L  
-  
-plt.figure(figsize=(8, 6))  
-plt.quiver(X, Y, U, V, angles="xy")  
-plt.xlim(-3, 3)  
-plt.ylim(-3, 3)  
-plt.xlabel("x")  
-plt.ylabel("y")  
-plt.title(r"Direction Field for $\frac{dy}{dx} = x^2$")  
-plt.grid(True)  
-plt.tight_layout()  
+f = lambda t,y: -t*y
+def slopefield(f,tinterval,yinterval,tstep,ystep):
+    t = np.arange(tinterval[0],tinterval[1],tstep)
+    y = np.arange(yinterval[0],yinterval[1],ystep)
+    L = 0.7*min(tstep,ystep)
+    for i in range(len(t)):
+        for j in range(len(y)):
+            slope = f(t[i],y[j])
+            theta = np.arctan(slope)
+            dy = L*np.sin(theta)
+            dt = L*np.cos(theta)
+            plt.plot([t[i],t[i] + dt],[y[j],y[j] + dy],'b')
+f = lambda t,y: t - y**2
+slopefield(f,[0,3],[-1,2],0.2,0.2)
 plt.savefig("direction-field-x-squared.png", dpi=300, bbox_inches="tight")  
 plt.show()
 

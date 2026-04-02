@@ -1,4 +1,4 @@
-#math #math340 #lp
+#math #math340 #lp #proof #optimization
 
 # Duality introduction:
 

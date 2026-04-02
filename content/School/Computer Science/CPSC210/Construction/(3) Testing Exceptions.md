@@ -2,22 +2,25 @@
 #cs #cs210 
 
 Testing exceptions:
-- When testing exceptions you must test that they are thrown when expected to be thrown and not thrown when not expected to be thrown
+- When testing exceptions you must test that they are ==thrown when expected to be thrown and not thrown when not expected to be thrown==.
 ```java
-- A simple way to test exceptions within a JUnit test is to call a method, and then fail if the exception is caught when it shouldn't be:
+
+// fail if exception is thrown when it should not have been thrown
 
 try {  
-anObject.aMethod(nonExceptionalInputs);  
-} catch (SomeException e) {  
-fail("I was not expecting SomeException!");  
+	anObject.aMethod(nonExceptionalInputs);  
+	} catch (SomeException e) {  
+	fail("I was not expecting SomeException!");  
+	}
 }
 
-- or fail if the exception is not thrown when it should have been:
+// fail if the exception is not thrown when it should have been:
 
 try {  
-anObject.aMethod(problematicInputs);  
-fail("I was not expecting to reach this line of code!");  
-} catch (SomeException e) {  
-System.out.println("great!");  
+	anObject.aMethod(problematicInputs);  
+	fail("I was not expecting to reach this line of code!");  
+	} catch (SomeException e) {  
+	System.out.println("great!");  
+	}
 }
 ```

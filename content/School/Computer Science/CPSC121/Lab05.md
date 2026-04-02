@@ -1,6 +1,8 @@
 #cs #cs121 #labs 
 
-## pre-lab
+# Time Dependent Circuits and Memory
+
+## Pre-lab
 
 In summary: in order to double the number of outputs you have (double the number of bits you want to output), you need to add a wave of half the previous frequency: (the initial wave is wave 0) (note the fastest wave is the wave that corresponds to the right-most bit, ie the wave the highest frequency)
 $$
@@ -10,7 +12,7 @@ Eg. if the first wave had frequency $f=1\text{Hz}$ you can currently only displa
 
 To reverse the direction of the count/pattern from the waves, you can simply negate all the waves, or shift them to start at a specific spot.
 
-## flip-flops
+# Flip Flops
 
 flips flops have the ability to remember one bit, essentially, whenever the clock is hit the output (Q) from the flip-flop will just be the current input D, but when the clock is not hit, the output from the flip-flop will be held constant to whatever the previous input was. The truth table for a flip flop is as follows:
 

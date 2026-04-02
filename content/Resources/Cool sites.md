@@ -4,6 +4,7 @@
 - https://ericdarve.github.io/NLA/content/intro.html
 - https://personal.math.ubc.ca/~PLP/
 - https://personal.math.ubc.ca/~CLP/CLP1/
+- https://ubcmath.github.io/python/
 
 ---
 # FOSS Software

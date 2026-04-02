@@ -1,12 +1,14 @@
 #cs #cs121 #labs
 
-## pre-lab 
+# Computational Circuits
+
+## Pre-Lab 
 
 We can construct a circuit that turns **on** when a number in binary is **odd** and is off when the number is even, by using the fundamentals of parity:
 - ie we can connect a wire to the right-most bit of a number with n bits to our output and whenever the number is odd (the last most bit is 1 not 0) our output is true
 - if we wanted to know if the number was even we could simply wire it through a **not** gate
 
-## adders
+## Adders
 
 
 You can wire a half adder for two 1 bit numbers with only an XOR and AND gate as follows:
