@@ -29,5 +29,81 @@ html, body {
   --callout-icon: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 7v14'/%3E%3Cpath d='M16 12h2'/%3E%3Cpath d='M16 8h2'/%3E%3Cpath d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/%3E%3Cpath d='M6 12h2'/%3E%3Cpath d='M6 8h2'/%3E%3C/svg%3E");
 }
 :root {
-  font-size: 18px; // default is ~16px
+  font-size: 13px; 
+}
+
+// 导航组件样式
+.sidebar-nav {
+  margin: 1rem 0;
+  width: 100%;
+
+  .nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 100%;
+
+    // 所有导航按钮的基础样式
+    .nav-button {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+      color: var(--dark);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      background: var(--light);
+      border: 1px solid var(--lightgray);
+      position: relative;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-style: normal;
+      font-family: var(--bodyFont);
+      width: 100%;
+      box-sizing: border-box;
+
+      // 图标样式
+      .nav-icon {
+        font-size: 1.1rem;
+        flex-shrink: 0;
+        font-style: normal;
+        width: 1.5rem; // 固定图标宽度
+        text-align: center; // 图标居中
+      }
+
+      // 文字样式
+      .nav-text {
+        font-weight: 500;
+        transition: color 0.2s ease;
+        font-style: normal;
+        flex: 1;
+        text-align: left;
+        color: var(--secondary);
+      }
+
+      // hover effect
+      &:hover {
+        transform: none;
+        background: var(--lightgray);
+        border-color: var(--secondary);
+
+        .nav-text {
+          color: var(--dark);
+        }
+      }
+
+      // 阅读模式按钮特殊样式
+      &.reading-mode-toggle {
+        .nav-text {
+          text-align: left;
+          color: var(--secondary);
+
+          &:hover {
+            color: var(--dark);
+          }
+        }
+      }
+    }
+  }
 }
