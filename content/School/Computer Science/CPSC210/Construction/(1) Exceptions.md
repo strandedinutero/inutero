@@ -1,5 +1,5 @@
 
-#cs #cs210
+#cs #cs210 #java
 
 # Why we use exceptions
 ## When is a method robust?

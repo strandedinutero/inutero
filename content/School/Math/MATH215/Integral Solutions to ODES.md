@@ -13,6 +13,7 @@ jupyter:
     language: python
     name: python3
 ---
+#math #cs #python
 ### Plotting the function $y' = t - y^2$
 
 ```python

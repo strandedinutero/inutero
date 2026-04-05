@@ -1,5 +1,5 @@
 
-#cs #abstraction #cs210 
+#cs #abstraction #cs210 #java
 # Implementing, Extending and Inheritance
 ## Interfaces 
 - An interface is a special kind of class that is implemented but not extended by other classes

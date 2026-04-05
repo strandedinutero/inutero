@@ -37,7 +37,7 @@ Where the corresponding form for definite integrals is as follows:
 2. Then we compute $du$ and $v$ 
 3. Solve the easier integral $\int vdu$ and repeat if necessary
 
-### The ==LIATE== Rule
+### The LIATE Rule
 
 LIATE is an acronym that stands for the order to choose your $u$ term in IBP and goes as follows:
 1. Logarithmic functions

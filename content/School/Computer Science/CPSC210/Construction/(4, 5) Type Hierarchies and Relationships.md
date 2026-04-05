@@ -1,23 +1,18 @@
 
-#cs #cs210
+#cs #cs210 #java
  
-Type hierarchies and other relationships:
+# Type Hierarchies and Relationships
 ![[Pasted image 20260304184116.png]]
 
-Object oriented design I:
 
-What the system is to do => software requirements activities
+## Sequence Diagrams
 
-How the system can achieve the requirements => software design activities
-
-Sequence diagrams:
-
-- A UML sequence diagram depicts the order of interactions between objects to accomplish an operation of interest.
+- A ==sequence diagram depicts the order of interactions between objects== to accomplish an operation of interest.
 
 For example:
 
 ![[Pasted image 20260304185124.png]]
-For the following code:
+Is the sequence diagram for the following code:
 
 ```java
 /** 
@@ -50,16 +45,16 @@ class JDayChooser {
 }
 ```
 
-Extracting class hierarchies:
+## Extracting Class Hierarchies
 
-- To extract a class hierarchy we need to analyze which classes extend and implement which classes, ie find all the super and sub types.
+- To extract a class hierarchy we need to analyze which classes extend and implement which classes, ==ie find all the super and sub types.==
 - Recall if a class extends another (including abstract classes) we draw a solid lined arrow
 - Recall if a class implements an interface we draw a dotted line arrow
 - Interfaces and abstract classes are denoted with <<>> brackets
 
-Extracting associations:
+### Extracting Associations
 
-- To extract associations we need to analyze the fields within classes -> if a class contains a field of another type we say that class is associated with that other type
+- To extract associations ==we need to analyze the fields within classes== -> if a class contains a field of another type we say that class is associated with that other type
 - To draw the association we draw a simple arrow and indicate the parity of the association. For example, if we had a class *dog*:
 
 ```java
@@ -75,26 +70,26 @@ Because when for the entire lifetime of the dog object it is associated with a t
 
 - Now if the dog had a collection of toys or another object that 1 would become a "0..\*\" annotation next to the arrowhead 
 
-Aggregation relationships:
+### Extracting Aggregations
 
 - If one object is part of another object then we draw the following diagram:
 
 ![[Pasted image 20260304190139.png]]
 
-Note: if it is a bidirectional relationship (ie both objects are part od each other), then we simply do not draw any arrow heads.
+Note: if it is a bidirectional relationship (ie both objects are part of each other), then we simply do not draw any arrow heads.
 
-Determining the multiplicity of a relationship:
+### Determining the multiplicity of a relationship:
 
-- To determine the multiplicity of a relationship we need to find its upper/lower bound
-- Lower bound: look at the fields after construction and examine how other methods change them, ie if a list always has 1 element in it then the lower bound of the relationship is one. Whereas if a field has a value of null then the multiplicity would be zero.
-- Upper bound: look at the methods that modify the object and and examine how the fields are changed, for example if you can add an arbitrary number of items to a list then that relationship would be of multiplicity \*\.
+- To determine the multiplicity of a relationship we need to find its ==upper/lower bound==
+- ==Lower bound:== look at the fields after construction and examine how other methods change them, ie if a list always has 1 element in it then the lower bound of the relationship is one. Whereas if a field has a value of null then the multiplicity would be zero.
+- ==Upper bound:== look at the methods that modify the object and and examine how the fields are changed, for example if you can add an arbitrary number of items to a list then that relationship would be of multiplicity \*\.
 
-Dependencies:
+### Dependencies:
 
 - If a class has a dependency on another class that is not held in a field, for example in a local variable or calls on a method, or takes a variable of that type as a parameter, then use a dashed arrow to represent the dependency. (dependencies do not have multiplicities)
 
-
-This is a summary of one approach you can take to extract a UML class diagram from code:
+### Summary 
+This is a summary of one approach you can take to extract a class diagram from code:
 
 1. Choose a class (e.g., X) to represent in the UML Class Diagram
 2. Inspect the class (e.g., X) for fields that refer to other classes (e.g., Y and Z) in the application

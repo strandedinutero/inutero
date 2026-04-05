@@ -1,4 +1,4 @@
-#cs #cs210 #abstraction 
+#cs #cs210 #abstraction #java
 
 ## Objects in java have a **declared** type and an **instantiated** type
 
@@ -44,7 +44,7 @@ For a sub type to be substitutable for a super type, ==the pre-condition of a me
 
 The effects clause is referred to as the post-condition of the method. For a sub type to be substitutable for a super type, ==the post-condition of a method defined in the sub type must be the same or stronger than the post-condition specified for the method of the same signature in the super type==.
 
-This is referred to as the *Liskov Substitution Principle* and more can be read about it in [[(1) Design Fundamentals]]
+This is referred to as the *Liskov Substitution Principle* and more can be read about it in [[(2) The Liskov Substitution Principle]]]
 
 ## Variable types when calling methods
 

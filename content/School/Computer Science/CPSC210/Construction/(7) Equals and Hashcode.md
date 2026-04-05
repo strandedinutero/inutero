@@ -1,16 +1,16 @@
 
-#cs #cs210 
+#cs #cs210 #java
 
-# 1. `==` compares **object references** (memory addresses).
-# 2. `.equals()` compares **object content** - but *only if the class overrides it* Otherwise it behaves just like `==`.
+# 1. `==` Compares Object References (pointers).
+# 2. `.equals()` compares **object content** - but *only if the class overrides it*. Else it behaves just like `==`.
 
-**Sometimes to find an element in a collection, you must override equals and hashcode for its type.**
+1. Sometimes to find an element in a collection, you must override equals and hashcode for its type.
 
-**Othertimes if you want to use equals for objects but only want to assess a particular field then you can also override equals and hashcode for that object type** 
+2. Other times if you want to use equals for objects ==but only want to assess a particular field then you can also override equals and hashcode for that object type== 
 
-- If your code is not able to find a particular Key in the HashMap (when you know you put it in), it may be because the implementation is comparing the key’s object identity as opposed to its object contents.  Fix that by overriding hashCode() and equals() in the Key class (whatever type your Key is), and select the contents upon which you would like to base equality.
-- Before you override equals the only objects that are equivalent to any object is the object itself.
-- When you override equals you are essentially making bigger groups of Fruit objects equivalent to each other, any two objects with the same name and color will be considered to be equivalent (fruit example)
+For example, ==if your code is not able to find a particular Key in the HashMap== (when you know you put it in), it may be because the implementation is comparing the key’s object identity as opposed to its object contents.  Fix that by overriding hashCode() and equals() in the Key class (whatever type your Key is), and select the contents upon which you would like to base equality.
+- ==Before you override equals the only objects that are equivalent to any object is the object itself.==
+- When you override equals you are essentially making bigger groups of objects that are equivalent to each other, any two objects with the same fields will be considered to be equivalent.
 
 Eg, if the dots represent objects and the circles around them represent equivalence classes:
 
@@ -21,8 +21,10 @@ Overriding equals transforms the diagram to this:
 
 
 ![[Pasted image 20260305000241.png]]
-But now all the objects in the same equivalence class have the same hash code, so hashCode must too be overridden.
-Eg.
+
+But now all the objects in the same equivalence class have the same hash code, so hashcode must too be overridden.
+
+Which can be done as follows:
 ```java
 @Override  
 public int hashCode() {  
@@ -31,4 +33,5 @@ public int hashCode() {
     return result;  
 }
 ```
-Naturally, the portions of the object that I look at to decide if two objects are equals() to each other have to be considered when I compute the hashCode for an object. So the results of both the hashCode() and equals() methods are completely determined by the contents of the name and color fields of the object.
+
+ This implementation ensures that the results of both the hashCode() and equals() methods are completely determined by the contents of the fields of the object.

@@ -1,4 +1,4 @@
-#cs #cs210 #OOP
+#cs #cs210 #OOP #java
 
 # Cohesion and Coupling
 
@@ -17,9 +17,9 @@ This is referred to as *cohesion*, you can assess assess cohesion by drawing a *
 In essence, coupling between classes implies they collaborate in some form or another.
 
 The severity of the form of coupling is directly proportional to the propagation of changes in the program:
-- Low severity: A change in one place requires no changes in collaborative classes
-- Medium severity: A change in once class requires a remote change to be made, but the compiler catches this and sends a warning. Think exception throwing or signature/type changes.
-- High severity: A change in one class requires a remote change but such a collaboration is only caught at runtime not during compiling.
+- *Low severity:* A change in one place requires no changes in collaborative classes
+- *Medium severity:* A change in once class requires a remote change to be made, but the compiler catches this and sends a warning. Think exception throwing or signature/type changes.
+- *High severity:* A change in one class requires a remote change but such a collaboration is only caught at runtime not during compiling.
 
 Sharing implementation details or duplicated code ultimately proves to be the most problematic form of coupling
 
@@ -48,7 +48,7 @@ In this class we mainly discuss 1. and 3.
 
 (very self-explanatory). Essentially each class should be centered around one cohesive concept. Overtime if a class seems as if it has picked up more than one responsibility consider splitting into more than one class.
 
-## The Liskov Substitution Principle
+
 
 
 
