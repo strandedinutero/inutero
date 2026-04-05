@@ -3,7 +3,7 @@ title: The Archives
 ---
 Inevitably going to be a very long work in progress for the next few years.
 
-[[public/school/Math|Math]] | [[public/school/Computer-Science|Computer Science]] | [[public/Library | Library]] | [[publi/Resources | Cool Stuff]]
+[[School/Math/index|Math]] | [[School/Computer Science/index|Computer Science]] | [[Bookshelf/index|What I'm Reading]] | [[Resources/index | Some Cool Links]]
 
 
 

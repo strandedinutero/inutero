@@ -38,4 +38,4 @@ plt.savefig("direction-field-x-squared.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 ```
-![[direction-field-x-squared.png]]
+![[content/Notes/Math/MATH215/direction-field-x-squared.png]]
