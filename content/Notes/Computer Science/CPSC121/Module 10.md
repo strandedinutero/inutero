@@ -17,7 +17,7 @@ In strong induction, we use the inductive hypothesis to assume that the statemen
 
 Prove that any integer greater than 1 is divisible by a prime number
 
-> [!proof] Proof 
+> [!theorem] Proof 
 > 
 > Base case: We know $P(2)$ is true as $2 \mid 2$ and 2 is prime.
 > 
@@ -51,7 +51,7 @@ Consider the relation: $a_1 = 0, a_2 = 2, a_3 = 4, a_n = 3a_{\lfloor{n/3\rfloor}
 
 For any positive integer $n$ prove $a_n$ is even.
 
-> [!proof] Proof 
+> [!theorem] Proof 
 > 
 > Base cases:
 > $$

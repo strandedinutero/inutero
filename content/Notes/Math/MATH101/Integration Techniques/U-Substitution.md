@@ -60,7 +60,7 @@ $$
 \int^1_{0}x^2\sin(u)\cdot \frac{1}{-3x^2}du = \int^1_{0} \frac{-1}{3}\sin(u)du
 $$
 
-> [!note] Bounds of Integration
+> [!theorem] Bounds of Integration
 > Please note we have still not rewritten our bounds in terms of $u$, so let us do that now. Given $u = 1 - x^3$, when $x = 0$ we see $u=1$ so we will change our lower bound to 1. Similarly when $x = 1$ we see $u=0$ thus our upper bound will become 0 as follows:
 
 $$

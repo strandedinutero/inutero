@@ -38,7 +38,7 @@ Prove through direct proof that for any positive integer $n$, if $n \equiv 5 \mo
 Prove by contradiction that for any three integers $a,b,c > 1$, if $a$ and $c$ share no common factors greater than 1 and $a \equiv b \mod c$ then $b$ and $c$ share no common factors greater than 1.
 
 
-> [!proof] Proof 
+> [!theorem] Proof 
 > First, let us formalize the question as follows, we want to show that $\forall a,b,c \in \mathbb Z^+ > 1$,
 > 
 > $$
@@ -55,7 +55,7 @@ Prove by contradiction that for any three integers $a,b,c > 1$, if $a$ and $c$ s
 Prove by weak induction that if $S(1)=3$ and $S(n+1) =\sqrt{S(n) + 40}$ for $n \geq 1$ then for all positive integers $n$, $S(n) < 7$.
 
 
-> [!proof] Proof 
+> [!theorem] Proof 
 >  Base case: We have that for $n=1$, $S(1)=3$ which is indeed less than 7 as $3<7$ so the statement holds for $n=1$.
 >  
 >  Inductive hypothesis: Assume that $S(n+1) = \sqrt{ S(n) +40}<7$ holds true for some unspecified $n\in\mathbb Z^+$.
@@ -84,7 +84,7 @@ $$
 That $x_{n}=5\cdot 2^{n-1}+2\cdot (-1)^n$ 
 
 
-> [!proof] Proof 
+> [!theorem] Proof 
 >  Base cases:
 >  We see that for $x_1=3$, our formula for $x_n$ yields:
 >  $$
@@ -138,7 +138,7 @@ That $x_{n}=5\cdot 2^{n-1}+2\cdot (-1)^n$
 Prove by direct proof that if $f(n) = 5^{10\log_5(n)}$ and $g(n) = n^{10} - 2n^9$ then $f(n) \in O(g(n))$.
 
 
-> [!proof] Proof 
+> [!theorem] Proof 
 > In order to prove that $f(n) \in O(g(n))$ we need to show that:
 > $$
 > \exists c \in \mathbb R^+, \exists n_{0}\in \mathbb N, \forall n \in \mathbb N, n \geq n_{0} \implies f(n) \leq cg(n)

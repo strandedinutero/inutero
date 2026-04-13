@@ -85,11 +85,11 @@ Then by the Theorem of Weak Duality we have that:
 
 And can see the following properties:
 
-> [!remark] Boundedness
+> [!theorem] Boundedness
 > If the primal and dual are feasible then they are all bounded.
 
 
-> [!remark] Feasibility
+> [!theorem] Feasibility
 > if $c^Tx_0,\quad b^T\lambda_0$ are both feasible then it is possible that $c^Tx_0<b^T\lambda_0$.
 
 
@@ -331,12 +331,12 @@ $$
 Where, $z^{**}$ represents the money the primal factory can make with $t$ more raw-materials, $z^*$ represents the optimal value with the original materials, and of course $\lambda^*\cdot t$ the money we have from the extra raw materials.
 
 
-> [!remark] A change in constraints
+> [!theorem] A change in constraints
 > For a primal problem, a change in $b$ only changes the feasible region; leaving the obj function unchanged. Whereas, in the dual problem the feasible region stays the same, but the objective function changes.
 
 
 
-> [!remark] Uniqueness
+> [!theorem] Uniqueness
 > If $x^*$ is the optimal basic solution and is non-degenerate, then the dual has a unique optimal solution $\lambda^*$. Meaning, the optimal point will not change for small $t$ and we can apply $z^{**} = z^* +\lambda^*\cdot t.$ 
 
 

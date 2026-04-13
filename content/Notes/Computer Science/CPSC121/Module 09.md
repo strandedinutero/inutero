@@ -40,7 +40,7 @@ Similarly, a product is simply the ==product of all elements in the sequence== a
 
 Sometimes when working with sums or products it can be convenient to factor out the last term which can be done as follows:
 
-> [!remark] Remark 
+> [!theorem] Remark 
 > $$
 > \sum^n_{k=m}a_k = a_{n} + \sum^{n-1}_{k=m}a_{k}, 
 > $$

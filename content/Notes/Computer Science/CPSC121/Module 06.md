@@ -70,7 +70,7 @@ In a DFA each state must have one and only one transition for each possible char
 
 
 
-> [!remark] Remark 
+> [!theorem] Remark 
 > DFAs and regular expressions are both ==equivalent== ways of describing the strings accepted by a language.
 
 

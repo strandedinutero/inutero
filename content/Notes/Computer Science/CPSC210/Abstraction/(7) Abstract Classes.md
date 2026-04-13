@@ -36,7 +36,7 @@ Above is an example of what an abstract class could look like.
  In essence, ==abstract classes are used for generic concepts== that have default behaviour but should not be made into objects -> ie you would not instantiate an animal but you would a dog
 
 
-> [!note] Class Hierarchies
+> [!theorem] Class Hierarchies
 > If an abstract class implements an interface it does not need all of the methods from the interface to be present in the abstract class -- BUT all sub classes of the abstract class do.
 
 # Method overloading vs overriding

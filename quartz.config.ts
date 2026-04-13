@@ -27,18 +27,18 @@ const config: QuartzConfig = {
         body: "Inter Tight",
         code: "JetBrains Mono",
       },
-      colors: {
-       lightMode: {
-        light: "#082136", // background
-        lightgray: "#0069c467", // text highlighting 
-        gray: "#dfe2e4",
-        darkgray: "#dfe2e4", // text
-        dark: "#dfe2e4", // heading
-        secondary: "#357598",
-        tertiary: "#6c96b1",
-        highlight: "#7ab1cc2d", // link highlighting
-        textHighlight: "#0069c467",
-        }, 
+    colors: {
+        lightMode: {
+        light: "#E4BC90",
+        lightgray: "#D7AA7A",
+        gray: "#B57E4F",
+        darkgray: "#5A4334",
+        dark: "#1E1A17",
+        secondary: "#C26F35",
+        tertiary: "#9F5634",
+        highlight: "rgba(194, 111, 53, 0.16)",
+        textHighlight: "#FAE1A0",
+    },
         darkMode: {
           light: "#0B0E14",
           lightgray: "#13192A",
@@ -62,7 +62,7 @@ const config: QuartzConfig = {
       }),
       Plugin.SyntaxHighlighting({
         theme: {
-          light: "nord",
+          light: "rose-pine-dawn",
           dark: "nord",
         },
         keepBackground: false,
@@ -97,3 +97,4 @@ const config: QuartzConfig = {
 }
 
 export default config
+
