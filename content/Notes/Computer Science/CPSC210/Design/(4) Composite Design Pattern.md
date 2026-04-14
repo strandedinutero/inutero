@@ -21,7 +21,7 @@ First and foremost, when assessing a design it is obviously critical that design
 
 # The Composite Design Pattern
 
-The composite design pattern is a solution for an object oriented hierarchy in which nodes with children differ in behaviour than nodes without children. In essence, the composite pattern describes a group of objects that are treated the same way as a single instance of the same type of object. The intent of a composite is to "compose" objects into tree structures to represent part-whole hierarchies. Implementing the composite pattern lets clients treat individual objects and compositions uniformly.
+The composite design pattern is a solution for an object oriented hierarchy in which nodes with children differ in behaviour than nodes without children. In essence, ==the composite pattern describes a group of objects that are treated the same way as a single instance of the same type of object==. The intent of a composite is to "compose" objects into tree structures to represent part-whole hierarchies. Implementing the composite pattern lets clients treat individual objects and compositions uniformly.
 
 The pattern consists of three classes:
 1. The Composite: ==The node that can have children==

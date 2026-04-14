@@ -29,16 +29,16 @@ const config: QuartzConfig = {
       },
     colors: {
         lightMode: {
-        light: "#E4BC90",
-        lightgray: "#D7AA7A",
-        gray: "#B57E4F",
-        darkgray: "#5A4334",
-        dark: "#1E1A17",
-        secondary: "#C26F35",
-        tertiary: "#9F5634",
-        highlight: "rgba(194, 111, 53, 0.16)",
-        textHighlight: "#FAE1A0",
-    },
+        light: "#1A1512",
+        lightgray: "#2A211C",
+        gray: "#6E5647",
+        darkgray: "#D8C0AE",
+        dark: "#F0DED0",
+        secondary: "#DD8250",
+        tertiary: "#C96F3A",
+        highlight: "rgba(201, 111, 58, 0.14)",
+        textHighlight: "#ff91237f",
+        }, 
         darkMode: {
           light: "#0B0E14",
           lightgray: "#13192A",
@@ -62,8 +62,8 @@ const config: QuartzConfig = {
       }),
       Plugin.SyntaxHighlighting({
         theme: {
-          light: "rose-pine-dawn",
-          dark: "nord",
+          light: "ayu-dark",
+          dark: "rose-pine-dawn",
         },
         keepBackground: false,
       }),

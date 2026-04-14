@@ -15,3 +15,185 @@ code[data-theme*=" "] span {
 [saved-theme="dark"] code[data-theme*=" "] span {
   color: var(--shiki-dark);
 }
+
+:root[saved-theme="light"] {
+  pre,
+  code[data-theme*="light"] {
+    color: #1f1916;
+  }
+
+  pre span[style*="color"] {
+    color: inherit;
+  }
+
+  /* comments */
+  pre span[style*="#"] {
+    color: inherit;
+  }
+
+  /* token overrides */
+  .token.comment,
+  pre .line .comment {
+    color: #9b7660 !important;
+    font-style: italic;
+  }
+
+  .token.string,
+  pre .line .string {
+    color: #a6bf7a !important;
+  }
+
+  .token.number,
+  .token.constant,
+  .token.boolean,
+  pre .line .number,
+  pre .line .constant,
+  pre .line .boolean {
+    color: #e0a85a !important;
+  }
+
+  .token.keyword,
+  .token.operator.keyword,
+  pre .line .keyword {
+    color: #d86e36 !important;
+    font-weight: 700;
+  }
+
+  .token.function,
+  .token.method,
+  pre .line .function {
+    color: #f08a3c !important;
+    font-weight: 700;
+  }
+
+  .token.class-name,
+  .token.type,
+  .token.builtin,
+  pre .line .class-name,
+  pre .line .type,
+  pre .line .builtin {
+    color: #8fb2d1 !important;
+    font-weight: 600;
+  }
+
+  .token.decorator,
+  .token.annotation,
+  .token.namespace,
+  pre .line .decorator,
+  pre .line .annotation,
+  pre .line .namespace {
+    color: #b995c6 !important;
+  }
+
+  .token.tag,
+  .token.attr-name,
+  pre .line .tag,
+  pre .line .attr-name {
+    color: #7fb8af !important;
+  }
+
+  .token.operator,
+  .token.punctuation,
+  pre .line .operator,
+  pre .line .punctuation {
+    color: #6a5143 !important;
+  }
+
+  .token.variable,
+  .token.property,
+  .token.parameter,
+  pre .line .variable,
+  pre .line .property,
+  pre .line .parameter {
+    color: #1f1916 !important;
+  }
+}
+
+:root[saved-theme="dark"] {
+  pre,
+  code[data-theme*="dark"] {
+    color: #f0ded0;
+  }
+
+  .token.comment,
+  pre .line .comment {
+    color: #9b7660 !important;
+    font-style: italic;
+  }
+
+  .token.string,
+  pre .line .string {
+    color: #a6bf7a !important;
+  }
+
+  .token.number,
+  .token.constant,
+  .token.boolean,
+  pre .line .number,
+  pre .line .constant,
+  pre .line .boolean {
+    color: #e0a85a !important;
+  }
+
+  .token.keyword,
+  .token.operator.keyword,
+  pre .line .keyword {
+    color: #dd8250 !important;
+    font-weight: 700;
+  }
+
+  .token.function,
+  .token.method,
+  pre .line .function {
+    color: #f08a3c !important;
+    font-weight: 700;
+  }
+
+  .token.class-name,
+  .token.type,
+  .token.builtin,
+  pre .line .class-name,
+  pre .line .type,
+  pre .line .builtin {
+    color: #9db4cc !important;
+    font-weight: 600;
+  }
+
+  .token.decorator,
+  .token.annotation,
+  .token.namespace,
+  pre .line .decorator,
+  pre .line .annotation,
+  pre .line .namespace {
+    color: #b995c6 !important;
+  }
+
+  .token.tag,
+  .token.attr-name,
+  pre .line .tag,
+  pre .line .attr-name {
+    color: #7fb8af !important;
+  }
+
+  .token.operator,
+  .token.punctuation,
+  pre .line .operator,
+  pre .line .punctuation {
+    color: #b89b88 !important;
+  }
+
+  .token.variable,
+  .token.property,
+  .token.parameter,
+  pre .line .variable,
+  pre .line .property,
+  pre .line .parameter {
+    color: #f0ded0 !important;
+  }
+}
+
+/* block styling */
+pre {
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--gray) 35%, transparent);
+}

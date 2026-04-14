@@ -17,11 +17,11 @@ But what does that mean?
 
 ### A wider pre-condition
 
-The pre-condition of a method refers to the method's requires clause, that is, what needs to be true for this method to run? So, for a sub type method to be substitutable for its super type, the LSP states that it cannot be more picky than the super type, more specifically, ==it can only have the same or lesser number of requirements.==
+The pre-condition of a method refers to the method's requires clause, that is, what needs to be true for this method to run? So, for a sub type method to be substitutable for its super type, the LSP states that it cannot be more picky than the super type, more specifically, ==it can only have the same or lesser number of requirements.== (it can have greater than or equal to the number of inputs to the superclass)
 
 ### A narrower post-condition
 
-The post-condition of a method refers to the method's effects clause, which is essentially the range of outcomes for that method. Now, for the method to be substitutable, the LSP dictates that ==this range of outcomes must be the same as, or smaller than the super type.==
+The post-condition of a method refers to the method's effects clause, which is essentially the range of outcomes for that method. Now, for the method to be substitutable, the LSP dictates that ==this range of outcomes must be the same as, or smaller than the super type.== (it can have less than or equal to the number of outputs as the superclass)
 
 ### A formal definition
 
