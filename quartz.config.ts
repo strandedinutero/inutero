@@ -58,7 +58,7 @@ const config: QuartzConfig = {
       Plugin.FrontMatter(),
       Plugin.ObsidianBases(),
       Plugin.CreatedModifiedDate({
-        priority: ["frontmatter", "git", "filesystem"],
+        priority: ["frontmatter", "git"],
       }),
       Plugin.SyntaxHighlighting({
         theme: {
