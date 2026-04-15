@@ -21,12 +21,12 @@ First and foremost, when assessing a design it is obviously critical that design
 
 # The Composite Design Pattern
 
-The composite design pattern is a solution for an object oriented hierarchy in which nodes with children differ in behaviour than nodes without children. In essence, ==the composite pattern describes a group of objects that are treated the same way as a single instance of the same type of object==. The intent of a composite is to "compose" objects into tree structures to represent part-whole hierarchies. Implementing the composite pattern lets clients treat individual objects and compositions uniformly.
+The composite design pattern is a solution for an object oriented hierarchy that involves some form of recurrence relation, in which nodes with children differ in behaviour than nodes without children. In essence, ==the composite pattern describes a group of objects that are treated the same way as a single instance of the same type of object==. The intent of a composite is to "compose" objects into tree structures to represent part-whole hierarchies. Implementing the composite pattern lets clients treat individual objects and compositions uniformly.
 
 The pattern consists of three classes:
 1. The Composite: ==The node that can have children==
 2. The Leaf: ==No children==
-3. The Component: ==The super class that is extended by the first two classes==, this can be an interface, abstract, or regular class
+3. The Component: ==The super class that is extended by the first two classes==, this can be an ==interface, abstract, or regular class==
 
 ![[composite-1.png]]
 - The Composite has a collection of Components, so that the Composite class can loop through those Components without keeping track of whether the Component is actually a Composite or a Leaf.

@@ -6,6 +6,10 @@ For bi-directional classes, ==the relationship must be actively maintained in ev
 
 ![[Pasted image 20260313151306.png|637]]
 
+Generally:
+- add(obj) -> check if what you are adding is null || its already been added, then return, otherwise if not null && has not already been added, add the obj and obj.add(this) to update the obj field of this.
+- remove(obj) -> check if obj is null || our field doesnt contain obj, otherwise if not null && out field contains obj, field.remove(obj) and obj.remove(this);
+
 Ie -> ==adding a B to the B field of A requires that the current A object be added to that B as the B class also has a field of A==. Similarly, when an A is added to the A field of B, it requires that the current B objected is added to that newly adde A's field of B.
 
 An *important* thing to note is that to implement a bi-directional relationship ==equals and hash code must be overridden.== 

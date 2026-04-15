@@ -6,6 +6,7 @@
 
 - A method is considered robust when every possible input case is addressed/handled by that method.
 - For example when a requires clause does not specify a range in the input domain that method would not be considered very robust.
+- A class by proxy is then robust if every method in that class is robust.
 ## Throwing and Catching Exceptions
 
  
@@ -93,8 +94,11 @@ try {
 	}
 ```
 
+In the case of multiple stacked catch blocks, it is important that they are ordered from sub to super type going from top to bottom to prevent sub type catch blocks from catching the super type exception when they were not supposed to.
+
 - A try catch blow can have a third block called ==finally==
 - The finally block ==executes after the catch block whether or not the exception was actually caught, or before the method exits if an exception is thrown in the catch block:==
+
 ```java
 try {  
     otherMethod();  

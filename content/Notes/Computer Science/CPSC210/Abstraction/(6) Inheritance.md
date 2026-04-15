@@ -14,17 +14,17 @@
 ## Extending classes
 
 - When a sub class extends a super class we can call all the super class methods on the subclass who inherits them, but we cannot call all the sub class methods on the super class. This is referred to as ==inheritance==.
-- If we want a field or method to only be available inside its own class we can declare their visibility as ==private==
-- If class A extends class B it inherits all of the behaviour (methods) of class B and can also add to it.
+- If we want a field or method to only be available inside its own class we can declare their visibility as ==private==. Where as ==protected== allows for that field to be accessible by its own class, subclasses, and any classes in the same package.
+- If class B extends class A it inherits all of the behaviour (methods) of class A and can also add to it.
 - When you extend a class you get access to all the super types methods but its not necessary to implement it, unlike when implementing an interface
 - Classes can override their super class methods by redefining the method with the same name and signature
 - When deciding which methods to call on an object, Java works up the hierarchy of actual types (the instantiated type) to find implementations (this is called *method dispatching*)
 - If you have a type hierarchy: A <- B <- C then you can do A aa = new B() or A aa = new C() or B bb = new C() but not working up. (ie we cant declare an object of type C and then try to call type A methods on it).
-- Subclasses can make their own methods, thus they are not available to objects declared as their supertype
+- Subclasses can make their own methods, thus those methods are not available to objects declared as their supertype, because the declared type dictates which methods can be called on a object.
 
 ### Method Dispatching
 - ==You can only call the declared methods on an object== (ie methods tied to the apparent type)
-- To determine which method implementation to use for a variable, ie if there are multiple of the same method as in the case of method overriding, Java works up the hierarchy starting at the ==instantiated== type of the variable not the declared type.
+- To determine which method implementation to use for a variable, ie if there are multiple of the same method as in the case of method overriding, Java works up the hierarchy starting at the ==instantiated== type of the variable (the actual) not the declared type.
 - For methods to be the same they must have the same name and signature, and parameters
 
 ### Super calls

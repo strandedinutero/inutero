@@ -5,9 +5,9 @@
 1. The iterator pattern allows us to separate out all the logic for iterating over a collection
 2. Every kind of collection needs its own iterator because they all have their own unique structure and the iterator logic is what provides a tailored traversal
 3. Java provides iterators for many of the collections in its language. Each of those iterators implement the Iterator Interface (specifying the next and hasNext methods), and the collections each implement the Iterable Interface (which has one method iterator that returns a reference to the correct iterator for the collection.
-4. We need the iterator pattern when we are working with our own unique collection
+4. ==We need the iterator pattern when we are working with our own unique collection==
 
-Basically, if a class implements the Iterable Interface, then that class can be used in a foreach to loop over elements of that class.  This is because the foreach loop is actually translated into a for loop as follows:
+Basically, ==if a class implements the Iterable Interface, then that class can be used in a foreach to loop over elements of that class==.  This is because the foreach loop is actually translated into a for loop as follows:
 
 ```java
 for(TheElement element : elements){  
@@ -16,10 +16,10 @@ for(TheElement element : elements){
   
 //Turns into:  
   
-Iterator<TheElement> elementsIterator = elements.iterator();  
-while(elementsIterator.hasNext()){  
-    TheElement element = elementsIterator.next();  
-    element.doSomething();  
+Iterator<TheElement> elementsIterator = elements.iterator(); // instantiate iterator
+while(elementsIterator.hasNext()){  // if there is a next object in collection
+    TheElement element = elementsIterator.next();  // the next object is
+    element.doSomething();  // do something with it
 }
 ```
 ![[Pasted image 20260413230300.png]]
@@ -84,7 +84,7 @@ After the list object is created and populated with two values (3 and 5), we ini
 
 ## Implementing the Iterator Interface
 
-Iterator is a data abstraction just as Collection is also a data abstraction, in order to traverse a collection of a particular type the iterator must know details about the collection, as a result there is typically a separate iterator implementation for each form of Collection.
+Iterator is a data abstraction just as Collection is also a data abstraction, in order to traverse a collection of a particular type the ==iterator must know details about the collection, as a result there is typically a separate iterator implementation for each form of Collection.==
 
 ## The Iterable Interface
 
@@ -94,13 +94,14 @@ public interface Iterable<E> {
 }
 ```
 
-This interface returns an iterator over a set of elements of type `E`. If a class implements this interface, an object of that class can be the target (`<collection>` above) in a for-each construct.
+This interface returns an iterator over a set of elements of type `E`. ==If a class implements this interface, an object of that class can be the target collection in a for-each construct.==
 
 `Collection` is an interface that extends `Iterable`:
 
 public interface Collection\<E> extends Iterable\<E>
 
-So every class that implements the Collection interface is also Iterable.
+==So every class that implements the Collection interface is also Iterable.==
+- This means that every primitive collection data abstraction has its own iterator we can use (a preset iterator so to speak)
 
 You can define your own data abstractions that implement Iterable and, as long as you then implement an Iterator subtype for your data abstraction, the abstraction can be used as the target in a for-each loop.
 
@@ -139,7 +140,7 @@ public class ThingCollection {
 		
 			if (thing.getName().startsWith(prefix)) {
 			
-			things.remove(thing);
+				things.remove(thing);
 	
 			}
 		
@@ -193,7 +194,7 @@ public class ThingCollection implements Iterable<Thing> {
 		
 			if (thing.getName().startsWith(prefix)) {
 			
-			things.remove(thing);
+				things.remove(thing);
 	
 			}
 		
@@ -231,7 +232,7 @@ for (Thing thing : things) {
 }
 ```
 
-To fix this, we need to use the iterators own `remove()` method, allowing the iterator to remain in sync.
+To fix this, we need to ==use the iterators== own `remove()` method, allowing the iterator to remain in sync.
 
 To do this, we remove the 'syntactic sugar' provided by our elementary for loop and instead implement code deeper in abstraction. So, we transform:
 
@@ -255,7 +256,7 @@ To this:
 
 ```java
 public void removeThingsThatStartWith(String prefix) {  
-	Iterator<Thing> iterator = things.iterator();  
+	Iterator<Thing> iterator = things.iterator();  // instantiate the iterator
 	while (iterator.hasNext()) {  
 		Thing thing = iterator.next();  
 		if (thing.getName().startsWith(prefix)) {  

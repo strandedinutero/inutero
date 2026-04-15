@@ -8,7 +8,7 @@
 - Exception hierarchies are useful for dealing with duplication in code because they allow you to abstract multiple types of exceptions as one common exception. For example, an allergy exception the allergy and a not hungry exception could both be abstracted to a didn't eat example.
 
 ## Unchecked Exceptions
-- Unchecked exceptions can be tried and caught just like checked exceptions, an example of this would be an arithmetic exception (dividing by zero)
+- Unchecked exceptions (Runtime Exceptions) can be tried and caught just like checked exceptions, an example of this would be an arithmetic exception (dividing by zero)
 - ==To keep the program from dying, unchecked exceptions need to be caught==
 
 ## Assertions

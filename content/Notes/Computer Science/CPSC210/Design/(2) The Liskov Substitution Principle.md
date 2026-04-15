@@ -2,7 +2,7 @@
 
 # The LSP
 
-The Liskov Substitution Principle (LSP) dictates how class hierarchies can be implemented and their respective behaviour. In brief, the LSP states that sub types cannot break the expectations set by their super types, that is the sub types pre condition must be in the desired range, and the sub types post condition must be in the desired range. ==In summary, a sub type is substitutable for its super type AS LONG AS, its pre condition AND post condition are subsets of the super type's pre and post conditions==
+The Liskov Substitution Principle (LSP) dictates how class hierarchies can be implemented and their respective behaviour. In brief, the LSP states that sub types cannot break the expectations set by their super types, that is the sub types pre condition must be in the desired range, and the sub types post condition must be in the desired range. ==In summary, a sub type is substitutable for its super type AS LONG AS, it takes in the same, and or more inputs AND produces the same and or a subset of the possible results==
 
 ## When is a Sub Type Substitutable?
 
@@ -10,8 +10,8 @@ A sub type is substitutable when it does not reduce the service the super class 
 
 
 > [!theorem] Liskov Substitution Principle
-> 1. It has a ==wider== pre-condition
-> 2. It has a ==narrower== post-condition
+> 1. It has a ==wider== pre-condition (weakened pre condition)
+> 2. It has a ==narrower== post-condition (strengthened post condition)
 
 But what does that mean?
 
@@ -31,4 +31,4 @@ The LSP ==formally== states that:
 
 # So what if our subclass isn't substitutable?
 
-To address this, we can either abstract out the shared behaviour of our classes to an interface, or instead of having a sub class extend a super class, the subclass could instead have that super class as a field in order to access it's methods without extending it, thus creating an association or dependency.
+To address this, ==we can either abstract out the shared behaviour of our classes to an interface==, or instead of having a sub class extend a super class, the subclass could instead have that super class as a field in order to access it's methods without extending it, thus creating an association or dependency.

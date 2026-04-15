@@ -47,7 +47,7 @@ class JDayChooser {
 
 ## If Else Statements
 
-Note, when drawing sequence diagrams, its important to remember that the method calls inside the if statement, for example:
+Note, when drawing sequence diagrams, its important to remember that the method calls inside the if statement, for example: `pm.expired()` 
 
 ```java
 public int loadFunds(int amount) {
@@ -73,7 +73,7 @@ should NOT be included inside of the *if box* in the sequence diagram. The prope
 
 ### Extracting Associations
 
-- To extract associations ==we need to analyze the fields within classes== -> if a class contains a field of another type we say that class is associated with that other type
+- To extract associations ==we need to analyze the fields within classes== -> if a class contains a field of another type we say that class is associated with that other type (associated but not a part of the object)
 - To draw the association we draw a simple arrow and indicate the parity of the association. For example, if we had a class *dog*:
 
 ```java
@@ -91,7 +91,7 @@ Because when for the entire lifetime of the dog object it is associated with a t
 
 ### Extracting Aggregations
 
-- If one object is part of another object then we draw the following diagram:
+- If one object is part of another object (instantiated in the constructor) then we draw the following diagram:
 
 ![[Pasted image 20260304190139.png]]
 

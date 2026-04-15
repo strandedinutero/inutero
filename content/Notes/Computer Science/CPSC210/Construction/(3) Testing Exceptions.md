@@ -8,7 +8,8 @@ Testing exceptions:
 // fail if exception is thrown when it should not have been thrown
 
 try {  
-	anObject.aMethod(nonExceptionalInputs);  
+	anObject.aMethod(nonExceptionalInputs); 
+	assertEquals(anObject.result(), what we want) // pass 
 	} catch (SomeException e) {  
 	fail("I was not expecting SomeException!");  
 	}
@@ -19,7 +20,8 @@ try {
 try {  
 	anObject.aMethod(problematicInputs);  
 	fail("I was not expecting to reach this line of code!");  
-	} catch (SomeException e) {  
+	} catch (SomeException e) {
+	assertEquals(anObject.size(), //size from before) // unchanged, pass!  
 	System.out.println("great!");  
 	}
 }

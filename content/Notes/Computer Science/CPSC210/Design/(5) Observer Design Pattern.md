@@ -8,16 +8,16 @@ The observer pattern was designed to address situations where there is a one-to-
 
 In essence, the observer pattern allows for one or more objects to watch the state of one or more other objects.
 
-- The ==watcher== is referred to as the *observer*
-- the ==watched== object is referred to as the *subject*
+- The ==watcher== is referred to as the *concrete observer*
+- the ==watched== object is referred to as the *concrete subject*, OR often the *concrete observable*
 
 ![[content/images/Pasted image 20260413002817.png]]
 
 ## How Is It Setup?
 
-*First* there is ==registration== where the observer registers with the subject such that the subject adds that observer to its list of observers.
+*First* there is ==registration== where the observer registers with the subject such that the ==subject calls addObserver(Observer o) and adds that observer to its list of observers.==
 
-*Second* there is ==notification== where when the subject's state changes it notifies the observers by calling its own notify method, the notify method then iterates through the list of observers calling an update method on each one.
+*Second* there is ==notification== where when the subject's state changes it notifies the observers by calling its own ==notify method== that calls update for every observer and is contained in the method body which causes the change in state, the notify method then iterates through the list of observers calling an update method on each one.
 
 ### Push and Pull Models
 

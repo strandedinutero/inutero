@@ -2,16 +2,20 @@
 
 # Making An Iterator
 
+Your class needs:
+- To implement Iterable\<Element>
+- A method with return type of someIterator\<Element> 
+
 Your Iterator needs:
 
-- To implement Iterator \<Element>
+- A private inner class someIterator that implements Iterator\<Element>
 - A cursor of some kind to keep track of where it is
 - A hasNext() that returns true if there are more elements, false otherwise
 - A next() method that returns the next ElementType, and moves the cursor along
 
-The home made iterator for your collection must be a private inner class. Because the Iterator code needs access to the private data field inside your class.
+The home made iterator for your collection must be a private inner class. ==Because the Iterator code needs access to the private data field inside your class.==
 
-In essence, we can make our own iterators for our own collections, this iterator is implemented as an inner class of the collection so that it can access it's private fields, this custom iterator implements the iterator interface methods, and is parameterised with the type of element over which it iterates
+In essence, we can make our own iterators for our own collections, this iterator is implemented as an inner class of the collection so that it can access it's private fields, this custom iterator implements the iterator interface methods, and is ==parameterised with the type of element over which it iterates==
 
 This iterator has the skeleton:
 
@@ -193,13 +197,7 @@ Now, if someIterator is a primitive iterator, that is if our class has a field l
 private ArrayList<String> strings;
 ```
 
-then we can simply return a `strings.iterator()` iterator. BUT if this is not the case, and our class instead has a field such as
-```java
-private List<Integer> data;
-
-```
-
-then we actually need to ==implement our own advanced iterator==, we can do this by creating an ==inner private class== that ==implements Iterator\<E>==. NOTE THIS IS DIFFERENT FROM IMPLEMENTING Iterable\<E>. 
+then we can simply return a `strings.iterator()` iterator. BUT, we CANNOT simply return a primitive iterator like this if our problem requires more ==complex iteration==, ie if we want to skip ever other element, or reverse the list as we iterate over it.Then we actually need to ==implement our own advanced iterator==, we can do this by creating an ==inner private class== that ==implements Iterator\<E>==. NOTE THIS IS DIFFERENT FROM IMPLEMENTING Iterable\<E>. 
 
 Now that the `Iterator<E>` interface implemented by our inner private class specifies the following methods that must be implemented:
 
@@ -213,7 +211,7 @@ boolean hasNext();
 E next();
 ```
 
-NOTE, this private class MUST also have some kind of cursor field, that is a field that can keep track of its place in the collection that it is iterating over, in easier problems this cursor ==can be another primitive iterator==. However, in other problems we need to be a little more creative.
+NOTE, this private class ==MUST also have some kind of cursor field, that is a field that can keep track of its place in the collection== that it is iterating over, in easier problems this cursor ==can be another primitive iterator==. However, in other problems we need to be a little more creative.
 
 For example, take this problem:
 
@@ -263,6 +261,8 @@ public class IntegerList {
 
 So, how do we make it so we can first iterate over the list, but also iterate in reverse??
 
+Small note: we use Integer in places where we are talking about an object that is an integer (in data abstractions), but we use int when we just want a plain number (in loops).
+
 ### Steps
 
 1. Implement Iterable\<Integer>
@@ -297,7 +297,7 @@ private class ReverseIterator implements Iterator<Integer> {
 		if (!hasNext()) {
 		throw new NoSuchElementException()
 		}
-		return data.get(cursor--);
+		return data.get(cursor--); // increment the cursor down
 	}
 
 }
@@ -305,7 +305,7 @@ private class ReverseIterator implements Iterator<Integer> {
 
 ## A Different Approach
 
-This was my first solution to this problem, it is a bit silly and I don't think its what they exactly want, but I think its a good example of using a primitive iterator as a cursor.
+This was my first solution to this problem, it is a bit silly and I don't think its what they exactly want, but I think its a good example of using a primitive iterator as a cursor. (No kidding its not what they want it ruins the spirit of the problem entirely).
 
 
 ```java
@@ -335,7 +335,7 @@ public class IntegerList implements Iterable<Integer> {
     
     private class IntegerListIterator implements Iterator<Integer> {
         
-        Iterator dataIterator = data.iterator();
+        Iterator<Integer> dataIterator = data.iterator(); // remember to spec Iterator type so the iterator isnt raw and leads to casting issues later
         
         public boolean hasNext() {
             return dataIterator.hasNext();
@@ -343,7 +343,7 @@ public class IntegerList implements Iterable<Integer> {
         
         public Integer next() throws NoSuchElementException {
             if (dataIterator.hasNext()) {
-                return (Integer) dataIterator.next();
+                return dataIterator.next(); // would need to cast here if Iterator wasnt declared as an Integer iterator
             } else {
                 throw new NoSuchElementException();
             }

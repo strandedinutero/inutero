@@ -17,7 +17,7 @@ For example, suppose we want any element in a program to be able ask a service f
 The singleton class has ==3 key features==
 1. A private static field of the class's type to hold a single instance of the class
 2. A private constructor (stops java from creating public one)
-3. A public static method that grants access to the single instance
+3. A ==public static== getInstance() method that grants access to the single instance, this is what is called by other objects when they want access to it.
 
 Basically, instead of calling something like new SingletonClass() to get an instance of the class, we call SingletonClass.getInstance() to get access to the one globally available instance of it.
 
@@ -26,7 +26,7 @@ For example, an example of a singleton class could be:
 ```java
 public class UniqueNameProvider {
 
-    private static UniqueNameProvider singleton;  
+    private static UniqueNameProvider singleton = new UniqueNameProvider(); 
     private int lastName = 0;  
   
     // EFFECTS: creates a new unique name provider  
@@ -34,9 +34,6 @@ public class UniqueNameProvider {
   
     // EFFECTS: returns the single instance of UniqueNameProvider  
     public static UniqueNameProvider getInstance() {  
-        if (singleton == null) {  
-            singleton = new UniqueNameProvider();  
-        }  
         return singleton;  
     }  
   
@@ -79,15 +76,3 @@ public class GameName {
 }
 ```
 
-### Note
-
-In a lot of example problems using the singleton pattern, the singleton object is simply initialized in the field such that:
-
-```java
-public class Singleton {
-	private static Singleton singleton = new Singleton();
-	
-	private Singleton() {
-	}
-}
-```
