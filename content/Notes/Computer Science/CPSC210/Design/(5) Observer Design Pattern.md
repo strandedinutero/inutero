@@ -90,7 +90,7 @@ public abstract class Subject {
 	
 		for (ZooObserver o : zooObservers) {
 		
-		o.update(a);
+			o.update(a);
 		
 		}
 		

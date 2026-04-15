@@ -78,3 +78,16 @@ public class GameName {
     }  
 }
 ```
+
+### Note
+
+In a lot of example problems using the singleton pattern, the singleton object is simply initialized in the field such that:
+
+```java
+public class Singleton {
+	private static Singleton singleton = new Singleton();
+	
+	private Singleton() {
+	}
+}
+```

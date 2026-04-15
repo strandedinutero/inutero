@@ -8,7 +8,8 @@
 - A Java class can implement 1 $\leq$ interfaces (as many as you want really). For example an airplane can implement the flyer interface and the cafe interface making it implement the methods found in both of those.
 - If a class implements two interfaces which both have a method of the same name, the class only needs to implement that method once.
 - An interface class cannot be initialized, that is you cannot create an interface object.
-- Once a method specified in an interface is overridden in a class hierarchy by a class, all sub types of that class will still compile and need not have their own implementation of the method from the interface,
+- Once a method specified in an interface is overridden in a class hierarchy by a class, all sub types of that class will still compile and need not have their own implementation of the method from the interface
+- An interface can extend other interfaces, but cannot implement other interfaces!
 
 ## Extending classes
 

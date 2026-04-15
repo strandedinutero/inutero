@@ -45,6 +45,25 @@ class JDayChooser {
 }
 ```
 
+## If Else Statements
+
+Note, when drawing sequence diagrams, its important to remember that the method calls inside the if statement, for example:
+
+```java
+public int loadFunds(int amount) {
+	PaymentMethod pm = this.getPaymentMethod();
+	int res = -1;
+	if (!pm.expired()) {
+		res = this.addFunds(pm.charge(amount));
+	}
+	return res;
+}
+```
+
+should NOT be included inside of the *if box* in the sequence diagram. The proper implementation for this code looks like this:
+
+![[Pasted image 20260414233855.png]]
+
 ## Extracting Class Hierarchies
 
 - To extract a class hierarchy we need to analyze which classes extend and implement which classes, ==ie find all the super and sub types.==
@@ -103,3 +122,7 @@ This is a summary of one approach you can take to extract a class diagram from c
 9. consider what the association represents. Does it represent a whole-part relationship? If so, change the association to an aggregation
 
 10. Repeat steps 2-4 for every class you end up adding to the UML Class Diagram
+
+## Casts
+
+A cast will compile when the types are in the same inheritance/interface family in a way Java thinks could be valid at runtime.

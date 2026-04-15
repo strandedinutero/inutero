@@ -34,13 +34,13 @@ Often in OOP we need to repeat an identical set of instructions on many differen
 2. Data abstraction
 3. Iteration abstraction
 
-Iteration abstraction in java allows us to arbitrary data in a convenient and efficient way. The iterator pattern addresses this need to do without needing to know details about the objects we are iterating on.
+Iteration abstraction in java allows us to use arbitrary data in a convenient and efficient way. The iterator pattern addresses this need to do without needing to know details about the objects we are iterating on.
 
 For example, the Java Collections Framework supports the data abstraction of a collection with multiple implementations, and the Collections interface specifies operations common to all collections. Specific kinds of collections can extend this interface to allow for more operations.
 
 ## An Iterator
 
-Namely, an iterator is something that happens to a collection,but not something that is apart of a collection. Specifically, when we iterate over a collection we wish to access each object in the collection in turn, without altering the collection.
+Namely, an iterator is something that happens to a collection, but not something that is apart of a collection. Specifically, when we iterate over a collection we wish to access each object in the collection in turn, without altering the collection.
 
 The *Collection* interface makes it possible to do so as it includes:
 
@@ -218,15 +218,15 @@ public Iterator<Thing> iterator() {
 
 Now, because things is an array list, `things.iterator` will just return an array list iterator.
 
-After this our for loop should now compile. The issue now though however, after we uncomment the button line of code we are faced with a ConcurrentModificationException, this exception is triggered whenever you are actively iterating over a list but the list is changed mid traversal.
+After this our for loop should now compile. The issue now though however, after we uncomment the button line of code we are faced with a *ConcurrentModificationException*, this exception is triggered whenever you are actively iterating over a list but the list is changed mid traversal.
 
 In our code it happens because of `things.remove(thing` in this loop:
-```
+```java
 for (Thing thing : things) {
 
 	if (thing.getName().startsWith(prefix)) {
 	
-	things.remove(thing);
+		things.remove(thing);
 
 }
 ```
@@ -259,7 +259,7 @@ public void removeThingsThatStartWith(String prefix) {
 	while (iterator.hasNext()) {  
 		Thing thing = iterator.next();  
 		if (thing.getName().startsWith(prefix)) {  
-			iteratorr.remove();  
+			iterator.remove();  
 		}  
 	}  
 }
