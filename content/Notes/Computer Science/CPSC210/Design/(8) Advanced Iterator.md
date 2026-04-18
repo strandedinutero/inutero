@@ -688,5 +688,223 @@ Iterator<Item> keyIterator = inventory.keySet().iterator();
 
 And then simply using that keyIterator for hasNext and next.
 
-### Iterator Sequence Diagrams
+## Iterator Sequence Diagrams
 ![[Pasted image 20260414233421.png]]
+
+## A Problem That Should Not Be That Hard
+
+A class example of how abstracting logic and sticking to the SRP in complex problems pays off...
+
+```java
+package model;
+
+  
+
+import java.util.Iterator;
+
+import java.util.List;
+
+import java.util.ArrayList;
+
+import java.util.NoSuchElementException;
+
+  
+  
+  
+
+// Represents a tri-mentoring program having a list of mentors
+
+// and mentees
+
+public class TriMentoringProgram implements Iterable<Participant> {
+
+	private List<Mentor> mentors;
+	
+	private List<Mentee> mentees;
+	
+	  
+	
+	// EFFECTS: constructs program with empty list of mentors and
+	
+	// empty list of mentees
+	
+	public TriMentoringProgram() {
+	
+		mentors = new ArrayList<>();
+		
+		mentees = new ArrayList<>();
+	
+	}
+	
+	  
+	
+	public List<Mentor> getMentors() {
+	
+		return mentors;
+	
+	}
+	
+	  
+	
+	public List<Mentee> getMentees() {
+	
+		return mentees;
+	
+	}
+	
+	  
+	
+	// MODIFIES: this
+	
+	// EFFECTS: adds mentor to list of mentors if not already in list
+	
+	public void addMentor(Mentor mentor) {
+	
+		if (!mentors.contains(mentor)) {
+		
+		mentors.add(mentor);
+		
+		}
+	
+	}
+	
+	  
+	
+	// MODIFIES: this
+	
+	// EFFECTS: adds mentee to list of mentees if not already in list
+	
+	public void addMentee(Mentee mentee) {
+	
+		if (!mentees.contains(mentee)) {
+		
+			mentees.add(mentee);
+	
+		}
+	
+	}
+	
+	  
+	  
+	
+	@Override
+	
+	public Iterator<Participant> iterator() {
+	
+		return new CustomIterator();
+	
+	}
+	
+	  
+	
+	private class CustomIterator implements Iterator<Participant> {
+	
+	  
+	
+		private Iterator<Mentor> mentorIterator = getMentors().iterator();
+		
+		private Iterator<Mentee> menteeIterator = getMentees().iterator();
+		
+		  
+		
+		private List<Participant> seenBefore = new ArrayList<>();
+		
+		  
+		
+		@Override
+		
+		public boolean hasNext() {
+		
+			if (mentorIterator.hasNext() || menteeIterator.hasNext()) {
+			
+				return true;
+				
+			} else return false;
+		
+		}
+	
+	  
+	  
+	
+	@Override
+	
+	public Participant next() throws NoSuchElementException {
+	
+		while (mentorIterator.hasNext()) {
+		
+			Participant p = mentorIterator.next();
+			
+			if (shouldReturn(p)) {
+			
+				return p;
+		
+			}
+	
+		}
+	
+	  
+	
+		while (menteeIterator.hasNext()) {
+			
+			Participant p = menteeIterator.next();
+			
+			if (shouldReturn(p)) {
+			
+				return p;
+			
+			}
+			
+		}
+			
+		throw new NoSuchElementException();
+		
+	}
+	
+	  
+	
+	public boolean shouldReturn(Participant p) {
+	
+		if (seenBefore.contains(p)) {
+		
+			return false;
+		
+		} else if (p instanceof Senior) {
+		
+			seenBefore.add(p);
+			
+			return true;
+		
+			} else return true;
+		
+		}
+	
+	}
+
+}
+```
+
+In this problem we were tasked with adding an iterator to the TriMentoringProgram class, which had two lists, one of mentors and one of mentees, but both mentors and mentees were both subclasses of Participant, the aim of this iterator was to be able to iterate over all its participants in whatever order we please such that this loop compiles:
+
+```java
+for (Participant p : triMentoringProgram) {
+    // do something with p
+}
+```
+
+Remember, this loop is just a nice way of saying:
+
+```java
+Iterator<Participant> pIterator = triMentoringProgram.iterator();
+
+while(pIterator.hasNext()) {
+	Participant p = pIterator.next();
+	// do something with p
+}
+
+```
+
+Now, because order doesnt matter, we can iterate over the mentors first and then the mentees, also because the mentors and mentees fields of the class are both simple lists we can make use of their iterators. The one issue with this problem however, is that there was an object that could be in both lists and we wanted to avoid duplicates, so to combat this we can declare a list called seenBefore to keep track of that specific kind of object everytime it appeared and record it, then if it ever came up again we could just not return it in next(). 
+
+Make note of the while loops present in next(), basically the for loop above consists of these two for loops in next() (but in next they are in iterator form). Essentially inside this upper next() method we are saying to go through all of the mentors, returning them if they are not duplicated, otherwise dont return them. Then, go through all the mentees in a similar fashion.
+
+This way we can keep the hasNext() function for our upper iterator very simple and just return true if either mentors or mentees has another element.

@@ -15,9 +15,11 @@ For example, suppose we want any element in a program to be able ask a service f
 ## How Do We Use It?
 
 The singleton class has ==3 key features==
-1. A private static field of the class's type to hold a single instance of the class
+1. A ==private static field== of the class's type to hold a single instance of the class
 2. A private constructor (stops java from creating public one)
 3. A ==public static== getInstance() method that grants access to the single instance, this is what is called by other objects when they want access to it.
+
+In singleton, the class has one shared variable and that variable points to the single singleton object.
 
 Basically, instead of calling something like new SingletonClass() to get an instance of the class, we call SingletonClass.getInstance() to get access to the one globally available instance of it.
 

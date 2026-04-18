@@ -267,3 +267,81 @@ public void removeThingsThatStartWith(String prefix) {
 ```
 
 In brief, a for loop and this iterator implementation are one and the same, albeit the iterator is just more complicated, the main thing thing is to instantiate an iterator such that `Iterator<E> iterator = elements.iterator()`. 
+
+## Tricks
+
+Sometimes, it very well may be possible to use a preset iterator in a problem, but it can be made more difficult because none of the fields have primitive collection types. In this case, it is sometimes possible to scan the class you wish to make iterable and search for any methods that returns what you wish to iterate over, for example:
+
+In this problem we want these two loops:
+
+```java
+for (Resource resource : selectionState.getResourcesWithSelectedServices()) {
+    System.out.println(resource);
+}
+
+for (Resource resource : selectionState) {
+    System.out.println(resource);
+}
+```
+
+to have the same effect, basically, it is asking us to make selectionState itererable so that its iterator iterates over its set of resources Set\<Resource>. Now in selectionState none of it's fields ever store its resource set directly, so we can just return field.iterator() and be done. BUT! if we look carefully it does specify a method that returns a set of resources, so we can just return the iterator called on that method as follows:
+
+```java
+public class SelectionState implements Iterable<Resource> {
+    private Set<Service> selected;
+    private ResourceRegistry registry;
+    private boolean isAnySelected;
+
+    // EFFECTS: constructs selection state with empty set of selected services 
+    // and 'any' service selected
+    public SelectionState(ResourceRegistry registry) {
+        this.registry = registry;
+        selected = new HashSet<>();
+        isAnySelected = true;
+    }
+
+    // MODIFIES: this
+    // EFFECTS: select resources with 'any' of the selected services
+    public void setSelectAny() {
+        // stub
+    }
+
+    // MODIFIES: this
+    // EFFECTS: select resources with 'all' of the selected services
+    public void setSelectAll() {
+        // stub
+    }
+
+    // MODIFIES: this
+    // EFFECTS: add service to selected services
+    public void selectService(Service service) {
+        // stub
+    }
+
+    // MODIFIES: this
+    // EFFECTS: remove service from selected services
+    public void deselectService(Service service) {
+        // stub
+    }
+
+    // MODIFIES: this
+    // EFFECTS: set selected services to given set of services
+    public void setSelectedServices(Set<Service> selected) {
+        // stub
+    }
+
+    // EFFECTS: return set of resources corresponding to current selection;
+    // if 'any' requested, return resources offering any of the selected services
+    // if 'all' requested, return resources offering all of the selected services
+    public Set<Resource> getResourcesWithSelectedServices() {
+        return null;  // stub
+    }
+    
+    @Override
+    // EFFECTS: return an iterator over the set of resources corresponding to current selection
+    public Iterator<Resource> iterator() {
+        // The "this." part could be omitted:
+        return this.getResourcesWithSelectedServices().iterator();
+    }
+}
+```
