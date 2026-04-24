@@ -18,7 +18,7 @@ It's steps are as follows:
 
 1. First write out the LP in standard inequality form
 2. If the basic solution is not feasible, then we need to create an auxiliary problem.
-3. Replace the objective function with $\max x_{o}$ and subtract $x_{0}$ from every row and form the initial dictionary.
+3. Replace the objective function with $\max -x_{o}$ and subtract $x_{0}$ from every row and form the initial dictionary.
 4. Choose $x_{0}$ as the entering variable and determine a leaving variable and do the normal simplex method.
 5. Repeat the normal simplex method until we reach a feasible basic solution, if the ==auxiliary problem has a maximum value of 0 then the original LP is feasible.== If it is not 0 stop as the original problem is infeasible.
 6. ==Remove the auxiliary variable== $x_0$ from the dictionary.
@@ -29,13 +29,13 @@ It's steps are as follows:
 
 ## Bland's Rule
 
-- Always choose the variable with the lowest subscript as the entering variable
+- Always choose the variable with the lowest subscript.
 
 ## Degeneracy
 
-- A dictionary is degenerate when at least one basic variable has a value of 0 in the current basic solution. This causes cycling and may cause the pivot to not move us out of the current corner.
+- A dictionary is degenerate when at least one basic variable has a value of 0 in the current basic solution. This can cause cycling and may cause the pivot to not move us out of the current corner.
 
-## Boundedness
+## Unboundedness
 
 - If a non-basic variable is strictly positive in every row then the objective function will grow without bound as that variable increases.
 
