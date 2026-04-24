@@ -116,9 +116,9 @@ $$
 
 We can translate any matrix game given a payoff matrix into an LP problem where the objective function begins as Max v, and the constraints are given by $v \leq x^TAe_{1}, x^TAe_{2}, \cdots x^TAe_{n}$ and $x_{1} + x_{2} + \cdots x_{m} = 1$. That is, the rows of the LP problem are given by the columns of the payoff matrix. For example:
 
-![[IMG_4142.jpeg]]![[IMG_4143.jpeg]]
-
-Once the LP is set up we first have $v$ enter and some other variable leave, after this we can get rid of $v$ as a basic variable and can solve it using simplex to find the optimal solution (the payoff for the row player), and the row players optimal strategy (the optimal probability vector).
+![[IMG_4142.jpeg]]
+![[IMG_4143.jpeg]]
+Once the LP is set up we first have to typically make one of the current variables a slack variable, ie $x_2 = 1 -x_{1}$ (remember to include this in the dictionary) then have $v$ enter and some other variable leave, after this we can get rid of $v$ as a basic variable and can solve it using simplex to find the optimal solution (the payoff for the row player), and the row players optimal strategy (the optimal probability vector).
 
 ## Von Neumann
 

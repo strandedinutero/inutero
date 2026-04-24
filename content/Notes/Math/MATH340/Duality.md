@@ -213,6 +213,23 @@ Similarly, the product of the jth primal variable with the jth dual slack variab
 
 ==Core idea:== if we have an optimal $x^*$ we can use CS to get $\lambda^*$ which too should be optimal (CS is used to verify the standard $\lambda^*_i=-C^*_{n+1}$)
 
+## An Implication
+$$
+\begin{align}
+\lambda^*_ix^*_{n+i} = 0 \quad \forall i\in{1\to m}\\
+x^*_j\lambda^*_{m+j}=0 \quad \forall j \in{1\to n}
+\end{align}
+$$
+This also implies that if the i'th dual variable is greater than 0, then because the i'th primal slack variable must equal zero it means the constraint on the i'th row in the primal is tight and the variables sum to the constant.
+
+Similarly, if the j'th primal variable is greater than zero then the j'th dual slack variable must be equal to zero meaning the constraint on the j'th row in the dual is tight and the variables sum to the constant.
+
+Namely something like:
+$$  
+a_{i1}x_1^*+a_{i2}x_2^*+\cdots+a_{in}x_n^* = b_i.  
+$$
+
+
 An example:
 ![[Pasted image 20260311232251.png]]
 
